@@ -1,1 +1,180 @@
+<!DOCTYPE HTML> <!-- 문서의 유형을 HTML로 선언. HTML5 문서임을 명시 -->
+<html> <!-- HTML 문서의 시작 -->
 
+<head> <!-- head 태그 시작: 문서의 메타데이터 및 외부 리소스 연결 -->
+    <title>HYEJIN</title> <!-- 페이지 제목 설정: 브라우저 탭에 표시될 이름 -->
+    <meta charset="utf-8" /> <!-- 문서의 문자 인코딩을 UTF-8로 설정 -->
+    <!-- UTF-8은 다양한 언어를 지원하는 문자 인코딩으로, 글로벌 웹사이트에서 주로 사용됩니다. -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- 모바일 기기 대응을 위한 설정 -->
+    <!-- width=device-width: 기기 너비에 맞춰 웹 페이지가 자동 조정됨 -->
+    <!-- initial-scale=1: 페이지가 처음 로드될 때 1배율로 표시 -->
+    <!-- user-scalable=no: 사용자가 확대/축소를 할 수 없도록 설정 -->
+
+    <link rel="stylesheet" href="assets/css/main.css" /> <!-- 외부 CSS 파일을 연결하여 문서의 스타일을 정의 -->
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> 
+    <!-- 자바스크립트를 사용할 수 없을 경우 별도의 CSS 파일 적용 -->
+</head> <!-- head 태그 끝 -->
+
+<body class="is-preload"> 
+<!-- body 태그 시작: 문서의 본문 내용을 포함하는 영역 -->
+<!-- is-preload 클래스는 페이지가 로딩 중일 때 스타일을 적용하기 위한 클래스 -->
+<!-- 주로 로딩 애니메이션이나 페이지 초기화와 관련된 스타일을 정의할 때 사용됩니다 -->
+
+    <!-- Page Wrapper --> <!-- 전체 페이지를 감싸는 래퍼 -->
+    <div id="page-wrapper">
+    <!-- 페이지 전체를 감싸는 래퍼 -->
+    <!-- id="page-wrapper"는 전체 페이지에 대한 레이아웃을 정의하는 역할을 합니다 -->
+    <!-- CSS에서 특정 레이아웃을 지정하거나 스타일을 적용할 때 사용 -->
+
+        <!-- Wrapper --> <!-- 페이지의 콘텐츠를 감싸는 기본 래퍼 -->
+        <div id="wrapper">
+        <!-- 페이지의 주된 콘텐츠를 감싸는 래퍼로, 각 섹션들이 여기에 포함됩니다 -->
+        <!-- wrapper는 플렉스 박스를 사용해 자식 요소들의 배치를 조정하는 데 사용됩니다 -->
+
+            <!-- Panel (Banner) --> <!-- 배너 패널: 페이지 상단에 배치되는 소개 내용 -->
+            <section class="panel banner right">
+            <!-- panel: 섹션을 패널 스타일로 정의하여, 일반 콘텐츠와 구분됨 -->
+            <!-- banner: 배너 섹션으로 상단에 배치되며, 주로 소개 또는 광고 목적 -->
+            <!-- right: 텍스트와 콘텐츠를 오른쪽으로 정렬 -->
+
+                <div class="content color0 span-3-75">
+                <!-- content: 본문 콘텐츠를 감싸는 영역 -->
+                <!-- color0: 다크 모드 또는 어두운 테마 색상을 적용 (보통 회색 또는 검은색 배경) -->
+                <!-- span-3-75: 플렉스 박스 그리드 시스템에서 3.75배의 공간을 차지 -->
+
+                    <h1 class="major">Hello, my name<br />is HYEJIN.</h1> <!-- 주요 제목 -->
+                    <p>This is <strong>my travel</strong> record And, it's my happiness :)</p> <!-- 소개 설명 -->
+                    <ul class="actions">
+                        <li><a href="#first" class="button primary color1 circle icon solid fa-angle-right">Next</a></li>
+                        <!-- button: 버튼 스타일을 적용하여 링크를 버튼처럼 보이게 만듦 -->
+                        <!-- primary: 주요 액션을 나타내는 버튼 (강조된 색상 적용) -->
+                        <!-- color1: 밝은 색상 테마를 적용하여 강조 -->
+                        <!-- circle: 버튼을 원형으로 만듦 -->
+                        <!-- icon: 버튼 내에 아이콘이 있음을 나타냄 -->
+                        <!-- fa-angle-right: FontAwesome에서 제공하는 오른쪽 화살표 아이콘 -->
+                    </ul>
+                </div>
+                <div class="image filtered span-1-75" data-position="25% 25%">
+                <!-- image: 이미지 컨테이너로, 이미지에 관련된 스타일을 적용 -->
+                <!-- filtered: 이미지에 필터 효과 (예: 흑백, 세피아 등) 적용 -->
+                <!-- span-1-75: 플렉스 박스에서 1.75배의 공간을 차지 -->
+                <!-- data-position="25% 25%": 배경 이미지의 위치를 설정 (25% 상단, 25% 좌측에서 시작) -->
+
+                    <img src="images/pic01.jpg" alt="LOAD" /> <!-- 이미지 표시 -->
+                </div>
+            </section>
+
+            <!-- Panel (Spotlight) --> <!-- 특정 내용을 강조하는 스포트라이트 패널 -->
+            <section class="panel spotlight medium right" id="first">
+            <!-- spotlight: 특정 콘텐츠를 강조하여 배치하는 패널 -->
+            <!-- medium: 섹션의 크기를 중간 크기로 설정 -->
+            <!-- right: 텍스트와 콘텐츠를 오른쪽으로 정렬 -->
+
+                <div class="content span-7">
+                <!-- content: 본문 콘텐츠 영역 -->
+                <!-- span-7: 플렉스 박스에서 7배의 공간을 차지 -->
+
+                    <h2 class="major">Vietnam Danang Golden Bridge</h2> <!-- 섹션 제목 -->
+                    <p>This is the famous Golden Bridge in Danang, Vietnam...</p> <!-- 설명 내용 -->
+                </div>
+                <div class="image filtered tinted" data-position="top left">
+                <!-- filtered: 이미지에 필터 효과 적용 -->
+                <!-- tinted: 이미지에 틴트 효과 (약간의 색조 효과)를 적용 -->
+                <!-- data-position="top left": 배경 이미지가 상단 좌측에 위치 -->
+
+                    <img src="images/pic02.jpg" alt="GOLDEN BRIDGE" /> <!-- 이미지 표시 -->
+                </div>
+            </section>
+
+            <!-- Panel --> <!-- 또 다른 강조 섹션 -->
+            <section class="panel spotlight medium right">
+            <!-- spotlight: 특정 콘텐츠를 강조하여 배치하는 패널 -->
+            <!-- medium: 섹션의 크기를 중간 크기로 설정 -->
+            <!-- right: 텍스트와 콘텐츠를 오른쪽으로 정렬 -->
+
+                <div class="content span-7">
+                    <h2 class="major">Kuala Lumpur, Malaysia</h2> <!-- 섹션 제목 -->
+                    <p>Kuala Lumpur is the capital of Malaysia...</p> <!-- 설명 내용 -->
+                </div>
+                <div class="image filtered tinted" data-position="top left">
+                <!-- filtered: 이미지에 필터 효과 적용 -->
+                <!-- tinted: 이미지에 틴트 효과 적용 -->
+                <!-- data-position="top left": 배경 이미지가 상단 좌측에 위치 -->
+
+                    <img src="images/pic03.jpg" alt="MALAY" /> <!-- 이미지 표시 -->
+                </div>
+            </section>
+
+            <!-- Panel (Spotlight) --> <!-- 또 다른 스포트라이트 패널 -->
+            <section class="panel spotlight large left">
+            <!-- spotlight: 특정 콘텐츠를 강조하여 배치하는 패널 -->
+            <!-- large: 섹션의 크기를 크게 설정 -->
+            <!-- left: 텍스트와 콘텐츠를 왼쪽으로 정렬 -->
+
+                <div class="content span-5">
+                    <h2 class="major">Sydney Opera House, Australia</h2> <!-- 섹션 제목 -->
+                    <p>I visited Australia to see this opera house...</p> <!-- 설명 내용 -->
+                </div>
+                <div class="image filtered tinted" data-position="top right">
+                <!-- filtered: 이미지에 필터 효과 적용 -->
+                <!-- tinted: 이미지에 틴트 효과 적용 -->
+                <!-- data-position="top right": 배경 이미지가 상단 우측에 위치 -->
+
+                    <img src="images/pic04.jpg" alt="SYDNEY" /> <!-- 이미지 표시 -->
+                </div>
+            </section>
+
+            <!-- Panel --> <!-- 추가 패널 -->
+            <section class="panel spotlight medium right">
+                <div class="content span-7">
+                    <h2 class="major">Singapore Marina Bay Sands Hotel</h2> <!-- 섹션 제목 -->
+                    <p>Singapore is a truly scary country...</p> <!-- 설명 내용 -->
+                </div>
+                <div class="image filtered tinted" data-position="top left">
+                <!-- filtered: 이미지에 필터 효과 적용 -->
+                <!-- tinted: 이미지에 틴트 효과 적용 -->
+                <!-- data-position="top left": 배경 이미지가 상단 좌측에 위치 -->
+
+                    <img src="images/pic05.jpg" alt="MALAY" /> <!-- 이미지 표시 -->
+                </div>
+            </section>
+
+            <!-- Panel --> <!-- 기타 패널 및 갤러리 -->
+            <section class="panel">
+                <div class="intro color2">
+                <!-- intro: 소개 영역을 의미하며, 스타일적으로 중앙 정렬되고 텍스트를 강조함 -->
+                <!-- color2: 밝은 색상 테마 적용 -->
+
+                    <h2 class="major">Other countries</h2> <!-- 기타 여행지 소개 제목 -->
+                    <p>I have also visited countries such as Vietnam, Taiwan...</p> <!-- 간략한 설명 -->
+                </div>
+                <div class="gallery"> <!-- 이미지 갤러리 -->
+                    <div class="group span-3">
+                    <!-- group: 여러 이미지를 그룹화하여 한 줄에 표시 -->
+                    <!-- span-3: 플렉스 박스에서 3배의 공간을 차지 -->
+
+                        <a href="images/gallery/fulls/01.jpg" class="image filtered span-3" data-title="Qingdao Airport" data-position="bottom">
+                            <img src="images/gallery/thumbs/01.jpg" alt="Qingdao Airport" /> <!-- 이미지 썸네일 -->
+                        </a>
+                        <!-- 나머지 갤러리 이미지들 -->
+                    </div>
+                </div>
+            </section>
+            <!-- Copyright --> <!-- 저작권 표시 영역 -->
+            <div class="copyright">&copy; HYEJIN.</div>
+            <!-- 저작권 문구를 나타내는 요소 -->
+
+        </div> <!-- #wrapper 끝 -->
+
+    </div> <!-- #page-wrapper 끝 -->
+
+    <!-- Scripts --> <!-- 자바스크립트 파일들 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 라이브러리 -->
+    <script src="assets/js/browser.min.js"></script> <!-- 브라우저 관련 자바스크립트 -->
+    <script src="assets/js/breakpoints.min.js"></script> <!-- 반응형 웹을 위한 자바스크립트 -->
+    <script src="assets/js/main.js"></script> <!-- 메인 자바스크립트 파일 -->
+
+</body> <!-- body 태그 끝 -->
+</html> <!-- HTML 문서 끝 -->

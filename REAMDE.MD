@@ -36,7 +36,7 @@
 
 <h3 align="center">📫 Contact 📫</h3>
 <div align="markdown-heading">
-  <a href="mailto:hyejin_lim@gmail.com">
+  <a href="mailto:jjis032m@gmail.com">
     <img
       src="https://img.shields.io/badge/hyejin_lim@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>&nbsp
   </a>

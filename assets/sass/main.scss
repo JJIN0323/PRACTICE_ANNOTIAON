@@ -1,0 +1,133 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'fontawesome-all.min.css';
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i,400i");
+
+/*
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn (html5up.net/license)
+*/
+
+// 브레이크포인트 설정.
+
+	@include breakpoints((
+		xlarge:   ( 1281px,  1680px ),  // 매우 큰 화면
+		large:    ( 981px,   1280px ),  // 큰 화면
+		medium:   ( 737px,   980px  ),  // 중간 크기 화면
+		small:    ( 481px,   736px  ),  // 작은 화면
+		xsmall:   ( 361px,   480px  ),  // 매우 작은 화면
+		xxsmall:  ( null,    360px  ),  // 초소형 화면
+		short:    '(min-aspect-ratio: 16/7)',  // 비율이 16:7 이상인 경우
+		xshort:   '(min-aspect-ratio: 16/6)'   // 비율이 16:6 이상인 경우
+	));
+
+// 믹스인 설정.
+
+	@mixin gradient-background($tint: false, $opacity: 0.25, $stop1: 25%, $stop2: 50%, $angle: 45deg) {
+		$background-image: (
+			url('../../images/overlay.png'),
+			linear-gradient($angle, transparentize(_palette(accent1), (1 - $opacity)) $stop1, transparentize(_palette(accent2), (1 - $opacity)) $stop2, transparentize(_palette(accent3), (1 - $opacity)))
+		);
+
+		$background-size: (
+			128px 128px,
+			auto
+		);
+
+		@if ($tint) {
+			$x: linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+			$y: auto;
+			$background-image: append($background-image, $x);
+			$background-size: append($background-size, $y);
+		}
+
+		background-image: $background-image;
+		background-size: $background-size;
+	}
+
+	@mixin gradient-background-small($tint: false, $opacity: 0.25, $stop1: 25%, $stop2: 50%) {
+		@include gradient-background($tint, $opacity, $stop1, $stop2, 135deg);
+	}
+
+	// 여러 span 크기를 설정하는 믹스인.
+	@mixin spans($x) {
+		@for $i from 0 through 10 {
+
+			@if ($i > 0) {
+				.span-#{$i} {
+					width: ($x * $i);  // $x 비율에 따른 너비 설정
+				}
+			}
+
+			@if ($i < 10) {
+				.span-#{$i}-25 {
+					width: ($x * $i) + ($x * 0.25);  // 0.25 비율 추가
+				}
+
+				.span-#{$i}-5 {
+					width: ($x * $i) + ($x * 0.5);  // 0.5 비율 추가
+				}
+
+				.span-#{$i}-75 {
+					width: ($x * $i) + ($x * 0.75);  // 0.75 비율 추가
+				}
+			}
+		}
+	}
+
+	// 작은 화면을 위한 span 크기 설정.
+	@mixin spans-small($x) {
+		@for $i from 0 through 10 {
+
+			@if ($i > 0) {
+				.span-#{$i} {
+					width: 100%;  // 작은 화면에서는 전체 너비 사용
+				}
+			}
+
+			@if ($i < 10) {
+				.span-#{$i}-25 {
+					width: 100%;  // 작은 화면에서는 전체 너비 사용
+				}
+
+				.span-#{$i}-5 {
+					width: 100%;  // 작은 화면에서는 전체 너비 사용
+				}
+
+				.span-#{$i}-75 {
+					width: 100%;  // 작은 화면에서는 전체 너비 사용
+				}
+			}
+		}
+	}
+
+// 기본 설정.
+
+	@import 'base/reset';  // 기본 스타일 초기화
+	@import 'base/page';  // 페이지 기본 스타일 설정
+	@import 'base/typography';  // 타이포그래피 관련 스타일 설정
+
+// 컴포넌트 설정.
+
+	@import 'components/form';  // 폼 관련 스타일
+	@import 'components/icon';  // 아이콘 관련 스타일
+	@import 'components/image';  // 이미지 관련 스타일
+	@import 'components/list';  // 리스트 관련 스타일
+	@import 'components/actions';  // 액션 관련 스타일
+	@import 'components/icons';  // 아이콘 관련 추가 스타일
+	@import 'components/grid-icons';  // 그리드 형식의 아이콘 스타일
+	@import 'components/contact-icons';  // 연락처 아이콘 스타일
+	@import 'components/table';  // 테이블 스타일
+	@import 'components/button';  // 버튼 스타일
+	@import 'components/gallery';  // 갤러리 스타일
+	@import 'components/panel';  // 패널 스타일
+	@import 'components/panel-banner';  // 배너 스타일
+	@import 'components/panel-spotlight';  // 스포트라이트 패널 스타일
+
+// 레이아웃 설정.
+
+	@import 'layout/page-wrapper';  // 페이지 래퍼 레이아웃 설정
+	@import 'layout/wrapper';  // 기본 래퍼 레이아웃 설정

@@ -1,0 +1,3664 @@
+@import url(font-awesome.min.css); /* 외부에서 Font Awesome 아이콘 폰트를 불러오는 코드 */
+@import url(fontawesome-all.min.css); /* 외부에서 모든 Font Awesome 아이콘 폰트를 불러오는 코드 */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i,400i"); /* 구글 폰트 'Source Sans Pro'를 불러오는 코드 */
+
+/* HTML 기본 태그 스타일 리셋 시작 */
+/* 브라우저마다 다르게 적용될 수 있는 기본 스타일을 초기화하여 일관성을 유지하기 위한 리셋 */
+
+html, body, div, span, applet, object, /* 다양한 HTML 태그들의 스타일 초기화 */
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote, /* iframe, 제목 태그, 문단 태그 등의 기본 스타일을 초기화 */
+pre, a, abbr, acronym, address, big, cite, /* 링크, 주소 태그 등의 기본 스타일 초기화 */
+code, del, dfn, em, img, ins, kbd, q, s, samp, /* 코드, 삭제선, 이미지 등 다양한 태그들 초기화 */
+small, strike, strong, sub, sup, tt, var, b, /* 텍스트 스타일 관련 태그 초기화 */
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, /* 리스트, 필드셋 등의 초기화 */
+form, label, legend, table, caption, tbody, /* 폼, 레이블, 테이블 관련 태그 초기화 */
+tfoot, thead, tr, th, td, article, aside, /* 테이블과 아티클, 어사이드 등의 초기화 */
+canvas, details, embed, figure, figcaption, /* HTML5 태그들의 기본 스타일 초기화 */
+footer, header, hgroup, menu, nav, output, ruby, /* 푸터, 헤더, 네비게이션, 루비 태그 등 초기화 */
+section, summary, time, mark, audio, video { /* 섹션, 타임, 오디오, 비디오 등 초기화 */
+    margin: 0; /* 모든 태그들의 기본 여백 제거 */
+    padding: 0; /* 모든 태그들의 기본 패딩 제거 */
+    border: 0; /* 기본적으로 설정된 테두리 제거 */
+    font-size: 100%; /* 폰트 크기를 기본 설정으로 초기화 */
+    font: inherit; /* 폰트 스타일을 부모 요소의 설정을 상속받도록 설정 */
+    vertical-align: baseline; /* 인라인 요소의 세로 정렬을 기본 설정으로 변경 */
+}
+
+article, aside, details, figcaption, figure, /* HTML5 요소를 블록 요소로 설정 */
+footer, header, hgroup, menu, nav, section {
+    display: block; /* 모든 태그를 블록 요소로 설정하여 레이아웃 구성 */
+}
+
+body { /* body 태그의 스타일 설정 */
+    line-height: 1; /* 줄 간격을 1로 설정하여 기본 간격 적용 */
+    background: #f6f4ef; /* 배경색을 밝은 베이지 색상으로 설정 */
+}
+
+ol, ul { /* 순서 없는 리스트와 순서 있는 리스트 스타일 설정 */
+    list-style: none; /* 리스트 아이템의 기본 스타일(번호 또는 점)을 제거 */
+}
+
+blockquote, q { /* 인용문과 q(짧은 인용문) 태그의 스타일 설정 */
+    quotes: none; /* 인용 부호 제거 */
+}
+
+blockquote:before, blockquote:after, q:before, q:after { /* 인용문 앞뒤의 기본 인용 부호 제거 */
+    content: ''; /* 인용 부호를 빈 값으로 설정 */
+    content: none; /* 인용 부호가 표시되지 않도록 설정 */
+}
+
+::selection { /* 사용자가 텍스트를 선택했을 때의 스타일 설정 */
+    color: #ffffff; /* 선택된 텍스트의 색상을 흰색으로 설정 */
+    background: #916f54; /* 선택된 텍스트의 배경색을 갈색 계열로 설정 */
+}
+
+table { /* 테이블 태그의 스타일 설정 */
+    border-collapse: collapse; /* 테두리 중첩을 제거하여 테이블 셀 간격 제거 */
+    border-spacing: 0; /* 셀 간의 간격을 없앰 */
+}
+
+body { /* body 태그의 추가 스타일 설정 */
+    -webkit-text-size-adjust: none; /* 모바일 브라우저에서 텍스트 크기 자동 조절 비활성화 */
+}
+
+mark { /* 강조된 텍스트(mark 태그)의 스타일 설정 */
+    background-color: transparent; /* 배경색을 투명으로 설정 */
+    color: inherit; /* 텍스트 색상을 부모 요소에서 상속 */
+}
+
+input::-moz-focus-inner { /* Firefox에서 포커스된 입력 요소의 내부 스타일 설정 */
+    border: 0; /* 기본 테두리 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+input, select, textarea { /* 폼 요소들의 공통 스타일 설정 */
+    -moz-appearance: none; /* Mozilla 브라우저에서 기본 외형 제거 */
+    -webkit-appearance: none; /* WebKit 브라우저에서 기본 외형 제거 */
+    -ms-appearance: none; /* Internet Explorer에서 기본 외형 제거 */
+    appearance: none; /* 기본 외형을 모두 제거하여 스타일을 커스터마이징 가능하게 설정 */
+}
+
+/* Page 애니메이션 설정 (Firefox 전용) */
+@-moz-keyframes load-spinner {
+    0% {
+        /* 시작 시 회전 각도 0도 */
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        /* 끝날 때 회전 각도 360도 (한 바퀴 회전) */
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Page 애니메이션 설정 (WebKit 브라우저 전용) */
+@-webkit-keyframes load-spinner {
+    0% {
+        /* 시작 시 회전 각도 0도 */
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        /* 끝날 때 회전 각도 360도 */
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Page 애니메이션 설정 (IE 전용) */
+@-ms-keyframes load-spinner {
+    0% {
+        /* 시작 시 회전 각도 0도 */
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        /* 끝날 때 회전 각도 360도 */
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* 기본 애니메이션 설정 (모든 브라우저) */
+@keyframes load-spinner {
+    0% {
+        /* 시작 시 회전 각도 0도 */
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        /* 끝날 때 회전 각도 360도 */
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* IE의 뷰포트 설정 */
+@-ms-viewport {
+    width: device-width; /* 뷰포트를 장치의 너비에 맞춤 */
+}
+
+/* HTML 태그의 기본 설정 */
+html {
+    width: 100%; /* HTML의 너비를 전체 화면 크기로 설정 */
+    height: 100%; /* HTML의 높이를 전체 화면 크기로 설정 */
+}
+
+html {
+    box-sizing: border-box; /* 요소의 너비와 높이를 테두리 및 패딩을 포함하도록 설정 */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* 상속된 박스 모델을 모든 요소에 적용 */
+}
+
+/* body 태그의 기본 스타일 설정 */
+body {
+    display: -moz-flex; /* Firefox에서 플렉스 박스 레이아웃 사용 */
+    display: -webkit-flex; /* WebKit 브라우저에서 플렉스 박스 사용 */
+    display: -ms-flex; /* IE에서 플렉스 박스 사용 */
+    display: flex; /* 모든 브라우저에서 플렉스 박스 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    -ms-overflow-style: scrollbar; /* IE의 스크롤 스타일 설정 */
+    width: 100%; /* 화면 전체 너비 */
+    height: 100%; /* 화면 전체 높이 */
+    min-height: 30rem; /* 최소 높이 설정 */
+    overflow: hidden; /* 스크롤 숨김 */
+}
+
+/* body 태그에 로딩 스피너 애니메이션 추가 */
+body:before {
+    animation: load-spinner 1s infinite linear; /* 1초 동안 무한 반복하는 로딩 애니메이션 */
+    transition: opacity 0.25s ease; /* 투명도 전환 효과 */
+    pointer-events: none; /* 상호작용 차단 */
+    content: ''; /* 빈 콘텐츠 (디자인용) */
+    display: block; /* 블록 요소로 설정 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 50%; /* 수직 가운데 정렬 */
+    left: 50%; /* 수평 가운데 정렬 */
+    width: 4rem; /* 스피너의 너비 설정 */
+    height: 4rem; /* 스피너의 높이 설정 */
+    margin: -2rem 0 0 -2rem; /* 중앙 정렬을 위한 마진 */
+    background-image: url("data:image/svg+xml;charset=utf8,..."); /* SVG 이미지를 배경으로 설정 */
+    background-position: center; /* 배경 이미지를 중앙에 배치 */
+    background-repeat: no-repeat; /* 배경 반복 없음 */
+    background-size: 4rem; /* 배경 크기를 4rem로 설정 */
+    opacity: 0; /* 기본적으로 투명하게 설정 */
+}
+
+/* 페이지 배경 설정 */
+body:after {
+    pointer-events: none; /* 상호작용 차단 */
+    content: ''; /* 빈 콘텐츠 (디자인용) */
+    display: block; /* 블록 요소로 설정 */
+    position: fixed; /* 고정 위치 설정 */
+    top: 0; /* 화면 상단 */
+    left: 0; /* 화면 왼쪽 */
+    width: 100%; /* 배경 너비를 전체 화면 크기로 설정 */
+    height: 100%; /* 배경 높이를 전체 화면 크기로 설정 */
+    z-index: -1; /* 다른 요소들보다 뒤에 배치 */
+    background-attachment: fixed; /* 배경을 고정 */
+    background-color: #e1e6e1; /* 배경색 설정 */
+    background-image: url("../../images/overlay.png"), url("../../images/bg.jpg"); /* 배경 이미지 설정 */
+    background-repeat: repeat, repeat-x; /* 첫 번째 이미지는 반복, 두 번째 이미지는 가로로 반복 */
+    background-size: 128px 128px, cover; /* 첫 번째 이미지는 128px 크기, 두 번째 이미지는 전체 화면 크기에 맞춤 */
+}
+
+/* 페이지 로딩 상태에서 모든 애니메이션 및 전환 비활성화 */
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+    animation: none !important; /* 모든 애니메이션 제거 */
+    transition: none !important; /* 모든 전환 효과 제거 */
+}
+
+/* 로딩 중일 때 스피너의 투명도 전환 */
+body.is-preload:before {
+    transition: opacity 1s ease; /* 1초 동안 부드럽게 투명도 변화 */
+    transition-delay: 0.75s; /* 0.75초 후에 투명도 변화 시작 */
+    opacity: 0.25; /* 스피너를 25% 불투명하게 설정 */
+}
+
+/* 작은 화면(736px 이하)에서의 레이아웃 설정 */
+@media screen and (max-width: 736px) {
+    html {
+        height: auto; /* HTML 요소의 높이를 자동으로 조정 */
+    }
+}
+
+body { /* body 태그 스타일 설정 */ /* 기존 CSS 주석을 한글로 번역 */
+	height: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+} 
+
+@media screen and (max-width: 480px) {
+
+html, body { /* HTML 기본 태그 스타일 리셋 시작 */ /* 기존 CSS 주석을 한글로 번역 */
+	min-width: 320px;
+} 
+
+} 
+
+/* Typography */ /* 기존 CSS 주석을 한글로 번역 */
+
+html {
+font-size: 18pt;
+font-size: 1vmax;
+} 
+
+@media screen and (max-width: 1680px) {
+
+	html {
+		font-size: 12pt;
+		font-size: 1.1vmax;
+} 
+
+} 
+
+@media screen and (max-width: 1280px) {
+
+	html {
+		font-size: 11pt;
+		font-size: 1.5vmax;
+} 
+
+} 
+
+body, input, select, textarea {
+color: rgba(255, 255, 255, 0.75);
+font-family: "Source Sans Pro", Helvetica, sans-serif;
+font-size: 1rem;
+font-weight: 300;
+line-height: 1.65;
+} 
+
+a {
+-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+color: inherit;
+border-bottom: dotted 1px;
+text-decoration: none;
+} 
+
+a:hover {
+	border-bottom-color: transparent;
+	color: #ffe4b4;
+} 
+
+strong, b {
+color: rgba(255, 255, 255, 0.875);
+font-weight: 400;
+} 
+
+em, i {
+font-style: italic;
+} 
+
+p {
+margin: 0 0 1.5rem 0;
+} 
+
+body.is-ie p {
+	width: 100%;
+} 
+
+h1, h2, h3, h4, h5, h6 {
+color: rgba(255, 255, 255, 0.875);
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+line-height: 1.3;
+margin: 0 0 0.75rem 0;
+letter-spacing: -0.05em;
+} 
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+} 
+
+h1.major, h2.major, h3.major {
+position: relative;
+} 
+
+h1.major:after, h2.major:after, h3.major:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 15rem;
+	height: 0.1rem;
+	background-color: rgba(255, 255, 255, 0.25);
+} 
+
+h1 {
+font-size: 3rem;
+line-height: 1.2;
+} 
+
+h1.major {
+	margin: 0 0 2.625rem 0;
+} 
+
+	h1.major:after {
+		bottom: -1.325rem;
+} 
+
+h2 {
+font-size: 1.75rem;
+line-height: 1.2;
+} 
+
+h2.major {
+	margin: 0 0 1.9875rem 0;
+} 
+
+	h2.major:after {
+		bottom: -1.2rem;
+} 
+
+h3 {
+font-size: 1.325rem;
+} 
+
+h3.major {
+	margin: 0 0 1.875rem 0;
+} 
+
+	h3.major:after {
+		bottom: -0.75rem;
+} 
+
+h4 {
+font-size: 1rem;
+} 
+
+h5 {
+font-size: 0.9rem;
+} 
+
+h6 {
+font-size: 0.7rem;
+} 
+
+sub {
+font-size: 0.8rem;
+position: relative;
+top: 0.5rem;
+} 
+
+sup {
+font-size: 0.8rem;
+position: relative;
+top: -0.5rem;
+} 
+
+blockquote {
+border-left: solid 0.25rem rgba(255, 255, 255, 0.25);
+font-style: italic;
+margin: 0 0 1.5rem 0;
+padding: 0.375rem 0 0.375rem 1.5rem;
+} 
+
+code {
+background: rgba(255, 255, 255, 0.075);
+border-radius: 0.25rem;
+font-family: "Courier New", monospace;
+font-size: 0.8rem;
+margin: 0 0.25rem;
+padding: 0.25rem 0.65rem;
+} 
+
+pre {
+-webkit-overflow-scrolling: touch;
+font-family: "Courier New", monospace;
+font-size: 0.8rem;
+margin: 0 0 1.5rem 0;
+white-space: pre-wrap;
+} 
+
+pre code {
+	display: block;
+	line-height: 1.625;
+	padding: 1rem 1.5rem;
+	overflow-x: auto;
+	margin: 0;
+} 
+
+hr {
+border: 0;
+border-bottom: solid 2px rgba(255, 255, 255, 0.25);
+margin: 1.875rem 0;
+} 
+
+.align-left {
+text-align: left;
+} 
+
+.align-center {
+text-align: center;
+} 
+
+.align-right {
+text-align: right;
+} 
+
+@media screen and (max-width: 736px) {
+
+html {
+	font-size: 12pt;
+} 
+
+h1 {
+	font-size: 2.25rem;
+	line-height: 1.2;
+} 
+
+	h1.major {
+		margin: 0 0 2.625rem 0;
+} 
+
+		h1.major:after {
+			bottom: -1.325rem;
+} 
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.2;
+} 
+
+	h2.major {
+		margin: 0 0 1.9875rem 0;
+} 
+
+		h2.major:after {
+			bottom: -1.2rem;
+} 
+
+h3 {
+	font-size: 1rem;
+} 
+
+	h3.major {
+		margin: 0 0 1.875rem 0;
+} 
+
+		h3.major:after {
+			bottom: -0.75rem;
+} 
+
+h4 {
+	font-size: 1rem;
+} 
+
+h5 {
+	font-size: 0.9rem;
+} 
+
+h6 {
+	font-size: 0.7rem;
+} 
+
+h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
+	display: none;
+} 
+
+} 
+
+@media screen and (max-width: 360px) {
+
+html {
+	font-size: 11pt;
+} 
+
+} 
+
+/* Form 스타일 설정 */
+form {
+    margin: 0 0 1.5rem 0; /* 하단 마진 1.5rem 설정 */
+}
+
+form > :last-child {
+    margin-bottom: 0; /* 마지막 자식 요소의 하단 마진 제거 */
+}
+
+/* fields 클래스 - 플렉스 박스를 사용한 폼 필드 배열 */
+form > .fields {
+    display: flex; /* 플렉스 박스 레이아웃 사용 */
+    flex-wrap: wrap; /* 여러 줄로 자동으로 감싸짐 */
+    width: calc(100% + 3rem); /* 필드 너비를 100%에서 3rem 더 확장 */
+    margin: -1.5rem 0 1.5rem -1.5rem; /* 필드 사이의 간격 조정 */
+}
+
+/* 개별 필드 스타일 */
+form > .fields > .field {
+    flex-grow: 0; /* 필드가 공간을 채우지 않도록 설정 */
+    flex-shrink: 0; /* 필드 크기가 축소되지 않도록 설정 */
+    padding: 1.5rem 0 0 1.5rem; /* 상단과 좌측에 패딩 추가 */
+    width: calc(100% - 1.5rem); /* 필드 너비 설정 */
+}
+
+/* 필드 너비를 절반으로 조정 */
+form > .fields > .field.half {
+    width: calc(50% - 0.75rem); /* 필드 너비를 50%로 설정 */
+}
+
+/* 필드 너비를 3등분으로 조정 */
+form > .fields > .field.third {
+    width: calc(100%/3 - 0.5rem); /* 필드 너비를 3등분으로 설정 */
+}
+
+/* 필드 너비를 4등분으로 조정 */
+form > .fields > .field.quarter {
+    width: calc(25% - 0.375rem); /* 필드 너비를 4등분으로 설정 */
+}
+
+/* 화면 너비가 736px 이하일 때 적용되는 미디어 쿼리 */
+@media screen and (max-width: 736px) {
+    form > .fields {
+        width: calc(100% + 2.25rem); /* 필드 너비를 100%에서 2.25rem 더 확장 */
+        margin: -1.125rem 0 1.5rem -1.125rem; /* 필드 간격 조정 */
+    }
+    form > .fields > .field {
+        padding: 1.125rem 0 0 1.125rem; /* 상단과 좌측 패딩 조정 */
+        width: calc(100% - 1.125rem); /* 필드 너비 조정 */
+    }
+    form > .fields > .field.half,
+    form > .fields > .field.third,
+    form > .fields > .field.quarter {
+        width: calc(100% - 1.125rem); /* 작은 화면에서는 필드를 100% 너비로 설정 */
+    }
+}
+
+/* 레이블 스타일 설정 */
+label {
+    color: rgba(255, 255, 255, 0.875); /* 레이블 텍스트 색상을 반투명 흰색으로 설정 */
+    display: block; /* 블록 요소로 설정 */
+    font-family: Arial, Helvetica, sans-serif; /* 폰트 설정 */
+    font-size: 0.8rem; /* 글꼴 크기 설정 */
+    font-weight: 700; /* 글꼴 두께를 굵게 설정 */
+    margin: 0 0 0.4875rem 0; /* 하단 마진 설정 */
+}
+
+/* 텍스트, 비밀번호, 이메일, 전화번호 입력 필드 스타일 */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    appearance: none; /* 기본 브라우저 스타일 제거 */
+    background: transparent; /* 투명 배경 설정 */
+    border: solid 2px rgba(255, 255, 255, 0.25); /* 테두리 색상 설정 */
+    border-radius: 0.25rem; /* 둥근 테두리 설정 */
+    color: inherit; /* 텍스트 색상을 상속 */
+    display: block; /* 블록 요소로 설정 */
+    outline: 0; /* 포커스 시 기본 테두리 제거 */
+    padding: 0 0.75rem; /* 좌우 패딩 설정 */
+    width: 100%; /* 너비를 100%로 설정 */
+}
+
+/* 유효하지 않은 입력 필드 스타일 */
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+input[type="tel"]:invalid,
+select:invalid,
+textarea:invalid {
+    box-shadow: none; /* 입력 필드의 그림자 제거 */
+    margin-bottom: 1rem; /* 하단 마진 1rem 추가 */
+    letter-spacing: 0.5rem; /* 글자 간격 설정 */
+}
+
+/* 입력 필드 포커스 시 스타일 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #ffe4b4; /* 포커스 시 테두리 색상을 밝은 노란색으로 변경 */
+}
+
+/* 선택 옵션 스타일 */
+option {
+    background-color: rgba(255, 255, 255, 0.875); /* 배경색을 반투명 흰색으로 설정 */
+    color: #2e2b37; /* 텍스트 색상 설정 */
+}
+
+/* 선택 필드의 스타일 설정 */
+select {
+    background-image: url("data:image/svg+xml,..."); /* 커스텀 화살표 배경 이미지 설정 */
+    background-size: 1.25rem; /* 화살표 크기 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+    background-position: calc(100% - 1rem) center; /* 배경 이미지 위치 설정 */
+    height: 2.5rem; /* 필드 높이 설정 */
+    padding-right: 2.5rem; /* 오른쪽 패딩 설정 */
+    text-overflow: ellipsis; /* 텍스트가 넘칠 경우 말줄임표 처리 */
+}
+
+/* select의 옵션 스타일 */
+select option {
+    color: rgba(255, 255, 255, 0.875); /* 텍스트 색상 설정 */
+    background: #2e2b37; /* 배경색 설정 */
+}
+
+/* select 요소에 포커스가 있을 때 스타일 */
+select:focus::-ms-value {
+    background-color: transparent; /* 포커스 시 배경을 투명하게 설정 */
+}
+
+select::-ms-expand {
+    display: none; /* IE에서 기본 확장 아이콘 제거 */
+}
+
+/* 텍스트, 비밀번호, 이메일, select 필드의 높이와 마진 설정 */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    height: 2.5rem; /* 필드 높이 설정 */
+    margin-bottom: 1rem; /* 하단 마진 설정 */
+}
+
+/* textarea 필드 스타일 */
+textarea {
+    padding: 0.75rem 1rem; /* 패딩 설정 */
+    margin-bottom: 1rem; /* 하단 마진 설정 */
+}
+
+/* 체크박스와 라디오 버튼 스타일 */
+input[type="checkbox"],
+input[type="radio"] {
+    appearance: none; /* 기본 브라우저 스타일 제거 */
+    display: block; /* 블록 요소로 설정 */
+    float: left; /* 왼쪽으로 플로팅 */
+    margin-right: -2rem; /* 오른쪽 마진 조정 */
+    opacity: 0; /* 기본 체크박스와 라디오 버튼을 숨김 */
+    width: 1rem; /* 너비 설정 */
+    z-index: -1; /* 화면에서 뒤로 보내기 */
+}
+
+/* 체크박스와 라디오 버튼의 레이블 스타일 */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    text-decoration: none; /* 텍스트 장식 제거 */
+    position: relative; /* 상대적 위치 설정 */
+    color: rgba(255, 255, 255, 0.75); /* 텍스트 색상 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+    font-size: 1rem; /* 글꼴 크기 설정 */
+    font-weight: 300; /* 글꼴 두께 설정 */
+    margin-bottom: 0; /* 하단 마진 제거 */
+    padding-left: 2.5rem; /* 좌측 패딩 설정 */
+    padding-right: 1rem; /* 우측 패딩 설정 */
+}
+
+/* 체크박스와 라디오 버튼의 커스텀 스타일 (before 가상 요소 사용) */
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+    content: ''; /* 빈 콘텐츠 생성 */
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+    font-size: 0.8rem; /* 글꼴 크기 설정 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 0; /* 상단에 배치 */
+    left: 0; /* 좌측에 배치 */
+    width: 1.6875rem; /* 너비 설정 */
+    height: 1.6875rem; /* 높이 설정 */
+    line-height: 1.6875rem; /* 줄 간격 설정 */
+    background: rgba(255, 255, 255, 0.075); /* 배경색 설정 */
+    border: solid 1px rgba(255, 255, 255, 0.25); /* 테두리 설정 */
+    border-radius: 0.25rem; /* 체크박스에 둥근 테두리 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* Internet Explorer용 체크박스와 라디오 버튼 스타일 수정 */
+body.is-ie input[type="checkbox"] + label:before,
+body.is-ie input[type="radio"] + label:before {
+    line-height: 1.5; /* 줄 간격 설정 */
+}
+
+/* 체크박스 또는 라디오 버튼이 선택된 경우 스타일 */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+    content: '\f00c'; /* Font Awesome 아이콘 표시 (체크 표시) */
+    background: rgba(255, 255, 255, 0.875); /* 선택 시 배경색 변경 */
+    border-color: rgba(255, 255, 255, 0.875); /* 테두리 색상 변경 */
+}
+
+/* 체크박스 또는 라디오 버튼에 포커스 시 스타일 */
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+    border-color: #ffe4b4; /* 포커스 시 테두리 색상 변경 */
+    box-shadow: 0 0 0 1px #ffe4b4; /* 포커스 시 그림자 추가 */
+}
+
+/* 포커스되었고 선택된 경우 스타일 */
+input[type="checkbox"]:focus:checked + label:before,
+input[type="radio"]:focus:checked + label:before {
+    background: #ffe4b4; /* 포커스 및 선택된 경우 배경색 변경 */
+}
+
+/* 커스텀 체크박스와 라디오 버튼 색상 설정 */
+input[type="checkbox"].color1 + label:before,
+input[type="radio"].color1 + label:before {
+    color: #736356; /* 색상 설정 */
+}
+
+input[type="checkbox"].color2 + label:before,
+input[type="radio"].color2 + label:before {
+    color: #916f54; /* 색상 설정 */
+}
+
+input[type="checkbox"].color3 + label:before,
+input[type="radio"].color3 + label:before {
+    color: #ffe4b4; /* 색상 설정 */
+}
+
+input[type="checkbox"].color4 + label:before,
+input[type="radio"].color4 + label:before {
+    color: #c4b4a8; /* 색상 설정 */
+}
+
+/* 체크박스와 라디오 버튼의 테두리 둥글기 설정 */
+input[type="checkbox"] + label:before {
+    border-radius: 0.25rem; /* 체크박스는 각진 모양 */
+}
+input[type="radio"] + label:before {
+    border-radius: 100%; /* 라디오 버튼은 원형 */
+}
+
+/* Placeholder 텍스트 스타일 */
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* Placeholder 텍스트 색상 설정 */
+    opacity: 1.0; /* 불투명도 설정 */
+}
+:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* Mozilla 브라우저 Placeholder 텍스트 색상 설정 */
+    opacity: 1.0; /* 불투명도 설정 */
+}
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* Mozilla 브라우저 Placeholder 텍스트 색상 설정 */
+    opacity: 1.0; /* 불투명도 설정 */
+}
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important; /* IE 브라우저 Placeholder 텍스트 색상 설정 */
+    opacity: 1.0; /* 불투명도 설정 */
+}
+
+/* 아이콘 스타일 설정 */
+.icon {
+    text-decoration: none; /* 텍스트 장식 제거 */
+    position: relative; /* 상대적 위치 설정 */
+    border-bottom: none; /* 하단 테두리 제거 */
+}
+
+/* 아이콘의 가상 요소 스타일 설정 */
+.icon:before {
+    display: inline-block; /* 인라인 블록 요소로 설정 */
+    font-family: 'Font Awesome 5 Free'; /* Font Awesome 아이콘 폰트 사용 */
+    font-weight: 400; /* 폰트 두께 설정 */
+    line-height: 1; /* 줄 간격 설정 */
+    text-transform: none !important; /* 텍스트 변환 없음 */
+}
+
+/* 아이콘의 레이블 숨기기 */
+.icon > .label {
+    display: none; /* 레이블을 화면에서 숨김 */
+}
+
+/* 아이콘의 줄 간격 상속 */
+.icon:before {
+    line-height: inherit; /* 부모 요소로부터 줄 간격 상속 */
+}
+
+/* 솔리드 아이콘의 폰트 두께 변경 */
+.icon.solid:before {
+    font-weight: 900; /* 폰트 두께를 굵게 설정 */
+}
+
+/* 브랜드 아이콘의 폰트 설정 */
+.icon.brands:before {
+    font-family: 'Font Awesome 5 Brands'; /* 브랜드 아이콘에 맞는 폰트 사용 */
+}
+
+/* Image 스타일 설정 */
+.image {
+    display: inline-block; /* 이미지를 인라인 블록 요소로 설정 */
+    position: relative; /* 이미지를 상대적 위치로 설정 */
+    border: 0; /* 이미지의 테두리 제거 */
+}
+
+/* 필터링된 이미지에 오버레이 추가 */
+.image.filtered:after {
+    background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(115, 99, 86, 0.25) 25%, rgba(236, 193, 160, 0.25) 50%, rgba(196, 180, 168, 0.25)); /* 배경 이미지와 그라데이션 설정 */
+    background-size: 128px 128px, auto; /* 배경 이미지 크기 설정 */
+    pointer-events: none; /* 사용자 상호작용 비활성화 */
+    content: ''; /* 비어있는 콘텐츠 추가 (디자인용) */
+    position: absolute; /* 절대 위치 지정 */
+    top: 0; /* 상단 위치 지정 */
+    left: 0; /* 좌측 위치 지정 */
+    width: 100%; /* 너비 100%로 설정 */
+    height: 100%; /* 높이 100%로 설정 */
+    opacity: 1; /* 투명도 100% */
+    z-index: 1; /* 오버레이가 위로 오도록 z-index 설정 */
+}
+
+/* 틴팅된 필터 이미지 스타일 설정 */
+.image.filtered.tinted:after {
+    background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)), linear-gradient(0deg, rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125)); /* 배경 이미지와 틴트 효과 설정 */
+    background-size: 128px 128px, auto, auto; /* 배경 이미지 크기 설정 */
+}
+
+/* 이미지의 object-fit 속성 설정 (이미지를 컨테이너에 맞게 자르기) */
+.image[data-position] img {
+    object-fit: cover; /* 이미지를 컨테이너에 맞게 잘라서 채우기 */
+    display: block; /* 블록 요소로 설정 */
+    position: absolute; /* 절대 위치 지정 */
+    top: 0; /* 상단 위치 설정 */
+    left: 0; /* 좌측 위치 설정 */
+    width: 100%; /* 너비 100%로 설정 */
+    height: 100%; /* 높이 100%로 설정 */
+}
+
+/* 이미지의 위치 설정 (상단 좌측) */
+.image[data-position="top left"] img {
+    object-position: top left; /* 이미지의 위치를 상단 좌측으로 설정 */
+}
+
+/* 이미지의 위치 설정 (상단 중앙) */
+.image[data-position="top"] img {
+    object-position: top; /* 이미지의 위치를 상단 중앙으로 설정 */
+}
+
+/* 이미지의 위치 설정 (상단 우측) */
+.image[data-position="top right"] img {
+    object-position: top right; /* 이미지의 위치를 상단 우측으로 설정 */
+}
+
+/* 이미지의 위치 설정 (우측 중앙) */
+.image[data-position="right"] img {
+    object-position: right; /* 이미지의 위치를 우측 중앙으로 설정 */
+}
+
+/* 이미지의 위치 설정 (하단 우측) */
+.image[data-position="bottom right"] img {
+    object-position: bottom right; /* 이미지의 위치를 하단 우측으로 설정 */
+}
+
+/* 이미지의 위치 설정 (하단 중앙) */
+.image[data-position="bottom"] img {
+    object-position: bottom; /* 이미지의 위치를 하단 중앙으로 설정 */
+}
+
+/* 이미지의 위치 설정 (하단 좌측) */
+.image[data-position="bottom left"] img {
+    object-position: bottom left; /* 이미지의 위치를 하단 좌측으로 설정 */
+}
+
+/* 이미지의 위치 설정 (좌측 중앙) */
+.image[data-position="left"] img {
+    object-position: left; /* 이미지의 위치를 좌측 중앙으로 설정 */
+}
+
+/* 이미지의 위치 설정 (중앙) */
+.image[data-position="center"] img {
+    object-position: center; /* 이미지의 위치를 중앙으로 설정 */
+}
+
+/* 특정 좌표 위치(25%, 25%)로 이미지 위치 설정 */
+.image[data-position="25% 25%"] img {
+    object-position: 25% 25%; /* 이미지의 위치를 25% 25%로 설정 */
+}
+
+/* 특정 좌표 위치(75%, 25%)로 이미지 위치 설정 */
+.image[data-position="75% 25%"] img {
+    object-position: 75% 25%; /* 이미지의 위치를 75% 25%로 설정 */
+}
+
+/* 특정 좌표 위치(75%, 75%)로 이미지 위치 설정 */
+.image[data-position="75% 75%"] img {
+    object-position: 75% 75%; /* 이미지의 위치를 75% 75%로 설정 */
+}
+
+/* 특정 좌표 위치(25%, 75%)로 이미지 위치 설정 */
+.image[data-position="25% 75%"] img {
+    object-position: 25% 75%; /* 이미지의 위치를 25% 75%로 설정 */
+}
+
+/* 이미지의 기본 스타일 */
+.image img {
+    display: block; /* 블록 요소로 설정 */
+}
+
+/* 좌우에 배치된 이미지의 최대 너비 설정 */
+.image.left, .image.right {
+    max-width: 40%; /* 좌우 배치된 이미지의 최대 너비를 40%로 제한 */
+}
+
+/* 좌우 이미지 너비 설정 */
+.image.left img, .image.right img {
+    width: 100%; /* 이미지 너비를 100%로 설정 */
+}
+
+/* 왼쪽 이미지 스타일 */
+.image.left {
+    float: left; /* 이미지가 왼쪽에 배치되도록 설정 */
+    padding: 0 1.5rem 1rem 0; /* 이미지의 패딩 설정 (오른쪽과 하단에 여백 추가) */
+    top: 0.25rem; /* 이미지의 상단 여백 설정 */
+}
+
+/* 오른쪽 이미지 스타일 */
+.image.right {
+    float: right; /* 이미지가 오른쪽에 배치되도록 설정 */
+    padding: 0 0 1rem 1.5rem; /* 이미지의 패딩 설정 (왼쪽과 하단에 여백 추가) */
+    top: 0.25rem; /* 이미지의 상단 여백 설정 */
+}
+
+/* 이미지가 화면에 맞게 자동으로 조정되도록 설정 */
+.image.fit {
+    display: block; /* 블록 요소로 설정 */
+    margin: 0 0 1.5rem 0; /* 하단에 마진 추가 */
+    width: 100%; /* 이미지의 너비를 100%로 설정 */
+}
+
+/* fit 클래스가 적용된 이미지의 너비 설정 */
+.image.fit img {
+    width: 100%; /* 이미지의 너비를 100%로 설정 */
+}
+
+/* 주요 이미지를 위한 스타일 설정 */
+.image.main {
+    display: block; /* 블록 요소로 설정 */
+    margin: 0 0 2.25rem 0; /* 하단에 마진 추가 */
+    width: 100%; /* 이미지의 너비를 100%로 설정 */
+}
+
+/* main 클래스가 적용된 이미지의 너비 설정 */
+.image.main img {
+    width: 100%; /* 이미지의 너비를 100%로 설정 */
+}
+
+/* List 스타일 설정 */
+
+/* 순서 있는 리스트의 스타일 설정 */
+ol {
+    list-style: decimal; /* 숫자 리스트 스타일 설정 */
+    margin: 0 0 1.5rem 0; /* 하단에 마진 추가 */
+    padding-left: 1.25rem; /* 좌측에 패딩 추가 */
+}
+
+/* 순서 있는 리스트 항목 스타일 */
+ol li {
+    padding-left: 0.25rem; /* 리스트 항목의 좌측 패딩 설정 */
+}
+
+/* 순서 없는 리스트의 스타일 설정 */
+ul {
+    list-style: disc; /* 순서 없는 리스트의 기본 마커를 원형으로 설정 */
+    margin: 0 0 1.5rem 0; /* 하단에 마진 추가 */
+    padding-left: 1rem; /* 좌측에 패딩 추가 */
+}
+
+/* 순서 없는 리스트 항목 스타일 */
+ul li {
+    padding-left: 0.5rem; /* 리스트 항목의 좌측 패딩 설정 */
+}
+
+/* 특수 스타일이 적용된 리스트 */
+ul.alt {
+    list-style: none; /* 리스트 마커 없음 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 특수 리스트 항목의 스타일 */
+ul.alt li {
+    border-top: solid 1px rgba(255, 255, 255, 0.25); /* 리스트 항목에 상단 테두리 추가 */
+    padding: 0.5rem 0; /* 상하 패딩 설정 */
+}
+
+/* 특수 리스트의 첫 번째 항목 스타일 */
+ul.alt li:first-child {
+    border-top: 0; /* 첫 번째 항목의 상단 테두리 제거 */
+    padding-top: 0; /* 첫 번째 항목의 상단 패딩 제거 */
+}
+
+/* 설명 리스트 스타일 */
+dl {
+    margin: 0 0 1.5rem 0; /* 하단에 마진 추가 */
+}
+
+/* 설명 리스트 제목 (dt)의 스타일 */
+dl dt {
+    display: block; /* 블록 요소로 설정 */
+    font-weight: 400; /* 글자 두께 설정 */
+    margin: 0 0 0.75rem 0; /* 하단에 마진 추가 */
+}
+
+/* 설명 리스트 항목 (dd)의 스타일 */
+dl dd {
+    margin-left: 1.5rem; /* 좌측에 마진 추가 */
+}
+
+/* Actions 리스트 스타일 설정 */
+
+/* actions 클래스의 스타일 */
+ul.actions {
+    display: flex; /* 플렉스 박스를 사용하여 레이아웃 설정 */
+    cursor: default; /* 기본 커서 설정 */
+    list-style: none; /* 리스트 마커 없음 */
+    margin-left: -0.75rem; /* 좌측 마진 조정 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* actions 리스트 항목의 스타일 */
+ul.actions li {
+    padding: 0 0 0 0.75rem; /* 좌측 패딩 설정 */
+    vertical-align: middle; /* 세로 중앙 정렬 */
+}
+
+/* special 클래스가 적용된 actions 리스트의 스타일 */
+ul.actions.special {
+    justify-content: center; /* 리스트 항목을 중앙 정렬 */
+    width: 100%; /* 너비를 100%로 설정 */
+    margin-left: 0; /* 좌측 마진 제거 */
+}
+
+/* special 클래스의 첫 번째 항목 스타일 */
+ul.actions.special li:first-child {
+    padding-left: 0; /* 첫 번째 항목의 좌측 패딩 제거 */
+}
+
+/* 세로로 쌓인(stacked) actions 리스트 스타일 */
+ul.actions.stacked {
+    flex-direction: column; /* 세로 방향으로 배치 */
+    margin-left: 0; /* 좌측 마진 제거 */
+}
+
+/* 세로로 쌓인 리스트 항목의 패딩 설정 */
+ul.actions.stacked li {
+    padding: 0.975rem 0 0 0; /* 상단 패딩 설정 */
+}
+
+/* 세로로 쌓인 리스트의 첫 번째 항목 패딩 제거 */
+ul.actions.stacked li:first-child {
+    padding-top: 0; /* 첫 번째 항목의 상단 패딩 제거 */
+}
+
+/* fit 클래스가 적용된 actions 리스트 스타일 */
+ul.actions.fit {
+    width: calc(100% + 0.75rem); /* 리스트 너비를 100%에 0.75rem 추가 */
+}
+
+/* fit 리스트 항목의 플렉스 설정 */
+ul.actions.fit li {
+    flex-grow: 1; /* 항목이 남은 공간을 채우도록 설정 */
+    flex-shrink: 1; /* 항목이 공간이 부족할 때 크기를 줄이도록 설정 */
+    width: 100%; /* 너비를 100%로 설정 */
+}
+
+/* fit 클래스의 리스트 항목 안의 요소 너비 설정 */
+ul.actions.fit li > * {
+    width: 100%; /* 리스트 항목 안의 요소 너비 100% 설정 */
+}
+
+/* fit과 stacked 클래스가 함께 적용된 리스트 스타일 */
+ul.actions.fit.stacked {
+    width: 100%; /* 리스트 너비를 100%로 설정 */
+}
+
+/* Icons 리스트 스타일 설정 */
+ul.icons {
+    cursor: default; /* 커서를 기본 모양으로 설정 */
+    list-style: none; /* 리스트 마커를 없앰 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 개별 아이콘 리스트 항목 스타일 */
+ul.icons li {
+    display: inline-block; /* 인라인 블록으로 설정해 아이콘이 옆으로 나란히 배치되도록 함 */
+    padding: 0 1rem 0 0; /* 오른쪽에 1rem의 패딩 추가 */
+}
+
+/* 마지막 아이콘 항목 스타일 */
+ul.icons li:last-child {
+    padding-right: 0; /* 마지막 항목의 오른쪽 패딩 제거 */
+}
+
+/* 아이콘의 기본 크기 설정 */
+ul.icons li .icon:before {
+    font-size: 1.25em; /* 아이콘의 폰트 크기를 1.25배로 설정 */
+}
+
+/* Grid Icons (격자형 아이콘 리스트) 스타일 설정 */
+ul.grid-icons {
+    display: flex; /* 플렉스 박스를 사용해 아이콘을 배치 */
+    flex-wrap: wrap; /* 여러 줄로 나눠 자동으로 감싸기 */
+    justify-content: center; /* 아이콘을 중앙에 배치 */
+    list-style: none; /* 리스트 마커를 없앰 */
+    margin: 0 0 1.5rem 0; /* 하단 마진 추가 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 개별 그리드 아이콘 스타일 */
+ul.grid-icons .icon {
+    display: block; /* 블록 요소로 설정 */
+    position: relative; /* 상대적 위치 지정 */
+    width: 100%; /* 아이콘이 100% 너비로 표시되도록 설정 */
+    text-align: center; /* 아이콘을 중앙에 정렬 */
+}
+
+/* 각 아이콘의 크기 및 테두리 설정 */
+ul.grid-icons .icon:before {
+    display: block; /* 블록 요소로 설정 */
+    width: 6rem; /* 아이콘 너비 설정 */
+    height: 6rem; /* 아이콘 높이 설정 */
+    line-height: 6rem; /* 아이콘의 세로 정렬을 위해 line-height 설정 */
+    border-radius: 6rem; /* 원형 테두리 설정 */
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25); /* 아이콘에 내부 그림자 추가 */
+    font-size: 2.5rem; /* 아이콘의 폰트 크기를 2.5rem로 설정 */
+    margin: 0 auto; /* 아이콘을 중앙에 정렬 */
+    text-align: center; /* 아이콘 텍스트 중앙 정렬 */
+}
+
+/* Internet Explorer에서 아이콘의 line-height 조정 */
+body.is-ie ul.grid-icons .icon:before {
+    line-height: 2.375; /* IE에서 아이콘의 세로 정렬을 위한 line-height 조정 */
+}
+
+/* 그리드 아이콘의 리스트 항목 스타일 */
+ul.grid-icons > li {
+    flex-grow: 0; /* 아이콘 크기가 확대되지 않도록 설정 */
+    flex-shrink: 0; /* 아이콘 크기가 축소되지 않도록 설정 */
+    position: relative; /* 상대적 위치 지정 */
+    margin: 1.5rem 0 0 1.5rem; /* 마진 설정 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 그리드 아이콘 연결된 상태에서의 스타일 설정 (아이콘들 간의 연결선) */
+ul.grid-icons.connected > li:before {
+    content: ''; /* 빈 콘텐츠 생성 */
+    display: block; /* 블록 요소로 설정 */
+    position: absolute; /* 절대적 위치 지정 */
+    width: 1.5rem; /* 연결선의 너비 설정 */
+    height: 2px; /* 연결선의 높이 설정 */
+    top: 50%; /* 연결선이 중앙에 위치하도록 설정 */
+    left: -1.5rem; /* 연결선이 좌측에 위치하도록 설정 */
+    background-color: rgba(255, 255, 255, 0.25); /* 연결선 색상 설정 */
+}
+
+/* 그리드 아이콘 연결된 상태에서의 세로 연결선 스타일 */
+ul.grid-icons.connected > li:after {
+    content: ''; /* 빈 콘텐츠 생성 */
+    display: block; /* 블록 요소로 설정 */
+    position: absolute; /* 절대적 위치 지정 */
+    width: 2px; /* 연결선의 너비 설정 */
+    height: 1.5rem; /* 연결선의 높이 설정 */
+    top: -1.5rem; /* 연결선이 상단에 위치하도록 설정 */
+    left: 50%; /* 연결선이 중앙에 위치하도록 설정 */
+    background-color: rgba(255, 255, 255, 0.25); /* 연결선 색상 설정 */
+}
+
+/* 두 개의 아이콘으로 구성된 그리드 */
+ul.grid-icons.two {
+    width: 14rem; /* 그리드 너비를 14rem로 설정 */
+}
+
+/* 그리드 첫 두 아이콘 항목에 대한 스타일 */
+ul.grid-icons.two > li:nth-child(-n + 2) {
+    margin-top: 0; /* 첫 두 아이콘 항목의 상단 마진 제거 */
+}
+
+/* 두 개의 아이콘 중 두 번째 아이콘의 세로 연결선 제거 */
+ul.grid-icons.two > li:nth-child(-n + 2):after {
+    display: none; /* 세로 연결선 표시하지 않음 */
+}
+
+/* 그리드의 왼쪽 첫 번째 아이콘 스타일 */
+ul.grid-icons.two > li:nth-child(2n - 1) {
+    margin-left: 0; /* 첫 번째 아이콘의 좌측 마진 제거 */
+}
+
+/* 첫 번째 아이콘의 가로 연결선 제거 */
+ul.grid-icons.two > li:nth-child(2n - 1):before {
+    display: none; /* 가로 연결선 표시하지 않음 */
+}
+
+/* 세 개의 아이콘으로 구성된 그리드 */
+ul.grid-icons.three {
+    width: 21.5rem; /* 그리드 너비를 21.5rem로 설정 */
+}
+
+/* 그리드 첫 세 아이콘 항목에 대한 스타일 */
+ul.grid-icons.three > li:nth-child(-n + 3) {
+    margin-top: 0; /* 첫 세 아이콘 항목의 상단 마진 제거 */
+}
+
+/* 첫 세 아이콘의 세로 연결선 제거 */
+ul.grid-icons.three > li:nth-child(-n + 3):after {
+    display: none; /* 세로 연결선 표시하지 않음 */
+}
+
+/* 세 개의 아이콘 중 첫 번째 아이콘 스타일 */
+ul.grid-icons.three > li:nth-child(3n - 2) {
+    margin-left: 0; /* 첫 번째 아이콘의 좌측 마진 제거 */
+}
+
+/* 첫 번째 아이콘의 가로 연결선 제거 */
+ul.grid-icons.three > li:nth-child(3n - 2):before {
+    display: none; /* 가로 연결선 표시하지 않음 */
+}
+
+/* 네 개의 아이콘으로 구성된 그리드 */
+ul.grid-icons.four {
+    width: 29rem; /* 그리드 너비를 29rem로 설정 */
+}
+
+/* 그리드 첫 네 아이콘 항목에 대한 스타일 */
+ul.grid-icons.four > li:nth-child(-n + 4) {
+    margin-top: 0; /* 첫 네 아이콘 항목의 상단 마진 제거 */
+}
+
+/* 첫 네 아이콘의 세로 연결선 제거 */
+ul.grid-icons.four > li:nth-child(-n + 4):after {
+    display: none; /* 세로 연결선 표시하지 않음 */
+}
+
+/* 네 개의 아이콘 중 첫 번째 아이콘 스타일 */
+ul.grid-icons.four > li:nth-child(4n - 3) {
+    margin-left: 0; /* 첫 번째 아이콘의 좌측 마진 제거 */
+}
+
+/* 첫 번째 아이콘의 가로 연결선 제거 */
+ul.grid-icons.four > li:nth-child(4n - 3):before {
+    display: none; /* 가로 연결선 표시하지 않음 */
+}
+
+/* 화면 너비가 736px 이하일 때의 그리드 아이콘 스타일 */
+@media screen and (max-width: 736px) {
+    ul.grid-icons {
+        justify-content: flex-start; /* 그리드를 왼쪽에 정렬 */
+        width: 100% !important; /* 그리드 너비를 100%로 설정 */
+        margin: -1rem 0 1.5rem -1rem; /* 그리드의 상단 및 좌측 마진 조정 */
+    }
+
+    /* 작은 화면에서의 아이콘 크기 조정 */
+    ul.grid-icons .icon:before {
+        width: 4.5rem; /* 아이콘 너비를 4.5rem로 설정 */
+        height: 4.5rem; /* 아이콘 높이를 4.5rem로 설정 */
+        line-height: 4.5rem; /* 세로 정렬을 위한 line-height 설정 */
+        font-size: 1.75rem; /* 아이콘 폰트 크기를 1.75rem로 조정 */
+    }
+
+    /* 작은 화면에서의 리스트 항목 마진 조정 */
+    ul.grid-icons > li {
+        margin: 1rem 0 0 1rem !important; /* 상단 및 좌측 마진 조정 */
+    }
+
+    /* 작은 화면에서 연결선 숨기기 */
+    ul.grid-icons > li:before {
+        display: none !important; /* 가로 연결선 숨김 */
+    }
+
+    ul.grid-icons > li:after {
+        display: none !important; /* 세로 연결선 숨김 */
+    }
+}
+
+
+/* Contact Icons 스타일 설정 */
+ul.contact-icons {
+    list-style: none; /* 리스트 마커를 없앰 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 개별 연락처 아이콘 항목 스타일 */
+ul.contact-icons > li {
+    margin: 1.25rem 0 0 0; /* 상단 마진 설정 */
+    padding-left: 0; /* 좌측 패딩 제거 */
+}
+
+/* 연락처 아이콘의 배경, 크기 및 텍스트 정렬 설정 */
+ul.contact-icons > li:before {
+    display: inline-block; /* 인라인 블록으로 설정 */
+    width: 2.25rem; /* 아이콘의 너비 설정 */
+    height: 2.25rem; /* 아이콘의 높이 설정 */
+    line-height: 2.25rem; /* 아이콘 내부 텍스트의 세로 정렬을 위한 line-height 설정 */
+    border-radius: 2.25rem; /* 원형 테두리 설정 */
+    background-color: white; /* 아이콘의 배경색을 흰색으로 설정 */
+    color: #2e2b37; /* 아이콘 텍스트 색상 설정 */
+    cursor: default; /* 기본 커서 설정 */
+    font-size: 1.125rem; /* 아이콘의 폰트 크기 설정 */
+    margin-right: 1rem; /* 아이콘과 텍스트 사이의 여백 설정 */
+    text-align: center; /* 아이콘 텍스트를 중앙 정렬 */
+    vertical-align: middle; /* 아이콘을 세로 중앙 정렬 */
+}
+
+/* IE에서 연락처 아이콘의 line-height 조정 */
+body.is-ie ul.contact-icons > li:before {
+    line-height: 2.125; /* IE에서 아이콘의 세로 정렬을 위한 line-height 조정 */
+}
+
+/* 연락처 아이콘의 링크 스타일 */
+ul.contact-icons > li a {
+    border-bottom: 0; /* 링크의 하단 테두리 제거 */
+}
+
+/* contact-icons 리스트의 color1 클래스 색상 설정 */
+ul.contact-icons.color1 > li:before {
+    color: #736356; /* 아이콘 텍스트 색상을 #736356으로 설정 */
+}
+
+/* contact-icons 리스트의 color2 클래스 색상 설정 */
+ul.contact-icons.color2 > li:before {
+    color: #916f54; /* 아이콘 텍스트 색상을 #916f54으로 설정 */
+}
+
+/* contact-icons 리스트의 color3 클래스 색상 설정 */
+ul.contact-icons.color3 > li:before {
+    color: #ffe4b4; /* 아이콘 텍스트 색상을 #ffe4b4로 설정 */
+}
+
+/* contact-icons 리스트의 color4 클래스 색상 설정 */
+ul.contact-icons.color4 > li:before {
+    color: #c4b4a8; /* 아이콘 텍스트 색상을 #c4b4a8로 설정 */
+}
+
+/* Table 스타일 설정 */
+
+/* 테이블 래퍼의 스크롤 설정 */
+.table-wrapper {
+    -webkit-overflow-scrolling: touch; /* 터치 스크롤 지원 */
+    overflow-x: auto; /* 테이블의 가로 스크롤 허용 */
+}
+
+/* 테이블 기본 스타일 설정 */
+table {
+    margin: 0 0 1.5rem 0; /* 하단 마진 추가 */
+    width: 100%; /* 테이블 너비 100% 설정 */
+}
+
+/* 테이블 행 스타일 */
+table tbody tr {
+    border: solid 1px rgba(255, 255, 255, 0.25); /* 테두리 설정 */
+    border-left: 0; /* 좌측 테두리 제거 */
+    border-right: 0; /* 우측 테두리 제거 */
+}
+
+/* 홀수 번째 행 배경색 설정 */
+table tbody tr:nth-child(2n + 1) {
+    background-color: rgba(255, 255, 255, 0.075); /* 짝수 행의 배경색 설정 */
+}
+
+/* 테이블 셀 패딩 설정 */
+table td {
+    padding: 0.75rem 0.75rem; /* 셀의 상하좌우 패딩 설정 */
+}
+
+/* 테이블 헤더 스타일 */
+table th {
+    color: rgba(255, 255, 255, 0.875); /* 헤더 텍스트 색상 설정 */
+    font-size: 0.9rem; /* 헤더 폰트 크기 설정 */
+    font-weight: 400; /* 헤더 폰트 두께 설정 */
+    padding: 0 0.75rem 0.75rem 0.75rem; /* 헤더 셀의 패딩 설정 */
+    text-align: left; /* 헤더 텍스트 왼쪽 정렬 */
+}
+
+/* 테이블 헤더 하단 테두리 설정 */
+table thead {
+    border-bottom: solid 2px rgba(255, 255, 255, 0.25); /* 헤더 하단 테두리 설정 */
+}
+
+/* 테이블 풋터 상단 테두리 설정 */
+table tfoot {
+    border-top: solid 2px rgba(255, 255, 255, 0.25); /* 풋터 상단 테두리 설정 */
+}
+
+/* 대체 테이블 스타일 설정 */
+table.alt {
+    border-collapse: separate; /* 테이블 셀이 분리되도록 설정 */
+}
+
+/* 대체 테이블의 셀 테두리 설정 */
+table.alt tbody tr td {
+    border: solid 1px rgba(255, 255, 255, 0.25); /* 셀의 테두리 설정 */
+    border-left-width: 0; /* 좌측 테두리 너비 제거 */
+    border-top-width: 0; /* 상단 테두리 너비 제거 */
+}
+
+/* 대체 테이블의 첫 번째 셀 좌측 테두리 설정 */
+table.alt tbody tr td:first-child {
+    border-left-width: 1px; /* 첫 번째 셀의 좌측 테두리 설정 */
+}
+
+/* 대체 테이블의 첫 번째 행 상단 테두리 설정 */
+table.alt tbody tr:first-child td {
+    border-top-width: 1px; /* 첫 번째 행의 상단 테두리 설정 */
+}
+
+/* 대체 테이블의 헤더 스타일 */
+table.alt thead {
+    border-bottom: 0; /* 헤더 하단 테두리 제거 */
+}
+
+/* 대체 테이블의 풋터 스타일 */
+table.alt tfoot {
+    border-top: 0; /* 풋터 상단 테두리 제거 */
+}
+
+/* Button 스타일 설정 */
+
+/* 다양한 버튼 타입에 대한 기본 스타일 설정 */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none; /* 기본 브라우저 버튼 스타일 제거 (Mozilla) */
+    -webkit-appearance: none; /* 기본 브라우저 버튼 스타일 제거 (WebKit) */
+    -ms-appearance: none; /* 기본 브라우저 버튼 스타일 제거 (Microsoft) */
+    appearance: none; /* 기본 브라우저 버튼 스타일 제거 */
+    
+    /* 배경색, 그림자, 텍스트 색상 변화에 대한 전환 효과 설정 */
+    -moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    
+    background-color: transparent; /* 투명 배경 설정 */
+    border: 0; /* 테두리 제거 */
+    border-radius: 0.25rem; /* 둥근 테두리 설정 */
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25); /* 내부 그림자 설정 */
+    color: rgba(255, 255, 255, 0.875) !important; /* 버튼 텍스트 색상 설정 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서가 포인터로 변하도록 설정 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+    font-family: Arial, Helvetica, sans-serif; /* 폰트 설정 */
+    font-size: 0.6rem; /* 폰트 크기 설정 */
+    font-weight: 700; /* 폰트 굵기 설정 */
+    height: 2.75rem; /* 버튼 높이 설정 */
+    letter-spacing: 0.15rem; /* 글자 간격 설정 */
+    line-height: 2.75rem; /* 세로 정렬을 위한 line-height 설정 */
+    padding: 0 1.5rem 0 1.65rem; /* 버튼 내부 패딩 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+    text-transform: uppercase; /* 텍스트를 대문자로 변환 */
+    white-space: nowrap; /* 버튼 내 텍스트 줄바꿈 방지 */
+}
+
+/* 버튼에 마우스를 올렸을 때 스타일 */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+    box-shadow: inset 0 0 0 2px #ffe4b4; /* 그림자 색상을 변경 */
+    color: #ffe4b4 !important; /* 텍스트 색상 변경 */
+}
+
+/* 버튼 클릭 시 스타일 */
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+button:active,
+.button:active {
+    background-color: rgba(255, 228, 180, 0.125); /* 배경색을 약간 불투명하게 변경 */
+}
+
+/* 아이콘이 있는 버튼 스타일 */
+input[type="submit"].icon:before,
+input[type="reset"].icon:before,
+input[type="button"].icon:before,
+button.icon:before,
+.button.icon:before {
+    display: inline-block; /* 아이콘을 인라인 블록으로 설정 */
+    position: relative; /* 상대적 위치 지정 */
+    top: -0.075rem; /* 아이콘을 살짝 위로 올림 */
+    vertical-align: middle; /* 세로 중앙 정렬 */
+    font-size: 0.8rem; /* 아이콘 폰트 크기 설정 */
+    margin: 0 0.375rem 0 -0.325rem; /* 아이콘과 텍스트 간의 마진 설정 */
+}
+
+/* 원형 아이콘 버튼 스타일 */
+input[type="submit"].icon.circle,
+input[type="reset"].icon.circle,
+input[type="button"].icon.circle,
+button.icon.circle,
+.button.icon.circle {
+    position: relative; /* 상대적 위치 지정 */
+    width: 3.125rem; /* 버튼 너비 설정 */
+    height: 3.125rem; /* 버튼 높이 설정 */
+    line-height: 3.125rem; /* 세로 정렬을 위한 line-height 설정 */
+    text-indent: 3.125rem; /* 텍스트를 버튼 내부로 숨김 */
+    border-radius: 100%; /* 원형 테두리 설정 */
+    overflow: hidden; /* 버튼 내부가 넘치지 않도록 설정 */
+    padding: 0; /* 패딩 제거 */
+    letter-spacing: 0; /* 글자 간격 제거 */
+}
+
+/* 원형 아이콘 버튼 내부 아이콘 스타일 */
+input[type="submit"].icon.circle:before,
+input[type="reset"].icon.circle:before,
+input[type="button"].icon.circle:before,
+button.icon.circle:before,
+.button.icon.circle:before {
+    display: block; /* 블록 요소로 설정 */
+    position: absolute; /* 절대적 위치 지정 */
+    top: 0; /* 상단 위치 지정 */
+    left: 0; /* 좌측 위치 지정 */
+    width: inherit; /* 상속된 너비 사용 */
+    height: inherit; /* 상속된 높이 사용 */
+    font-size: 1.25rem; /* 아이콘 폰트 크기 설정 */
+    line-height: inherit; /* 상속된 line-height 사용 */
+    margin: 0; /* 마진 제거 */
+    text-indent: 0; /* 텍스트 들여쓰기 제거 */
+}
+
+/* 좌측 화살표 아이콘이 있는 원형 버튼 스타일 */
+input[type="submit"].icon.circle.fa-angle-left:before,
+input[type="reset"].icon.circle.fa-angle-left:before,
+input[type="button"].icon.circle.fa-angle-left:before,
+button.icon.circle.fa-angle-left:before,
+.button.icon.circle.fa-angle-left:before {
+    position: relative; /* 상대적 위치 지정 */
+    left: -0.1rem; /* 아이콘을 살짝 왼쪽으로 이동 */
+    font-size: 1.75rem; /* 아이콘 크기를 더 크게 설정 */
+}
+
+/* 우측 화살표 아이콘이 있는 원형 버튼 스타일 */
+input[type="submit"].icon.circle.fa-angle-right:before,
+input[type="reset"].icon.circle.fa-angle-right:before,
+input[type="button"].icon.circle.fa-angle-right:before,
+button.icon.circle.fa-angle-right:before,
+.button.icon.circle.fa-angle-right:before {
+    position: relative; /* 상대적 위치 지정 */
+    left: 0.1rem; /* 아이콘을 살짝 오른쪽으로 이동 */
+    font-size: 1.75rem; /* 아이콘 크기를 더 크게 설정 */
+}
+
+/* 너비가 100%인 버튼 스타일 */
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+button.fit,
+.button.fit {
+    width: 100%; /* 버튼 너비를 100%로 설정 */
+}
+
+/* 작은 버튼 스타일 */
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small,
+button.small,
+.button.small {
+    font-size: 0.4rem; /* 작은 폰트 크기 설정 */
+    height: 1.875rem; /* 작은 높이 설정 */
+    line-height: 1.875rem; /* 세로 정렬을 위한 line-height 설정 */
+    padding: 0 1.25rem 0 1.4rem; /* 패딩 설정 */
+}
+
+/* 큰 버튼 스타일 */
+input[type="submit"].large,
+input[type="reset"].large,
+input[type="button"].large,
+button.large,
+.button.large {
+    font-size: 0.8rem; /* 큰 폰트 크기 설정 */
+    height: 3.3125rem; /* 큰 높이 설정 */
+    line-height: 3.3125rem; /* 세로 정렬을 위한 line-height 설정 */
+    padding: 0 2rem 0 2.15rem; /* 패딩 설정 */
+}
+
+/* 기본 버튼 스타일 (primary) */
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+    background-color: white; /* 배경색을 흰색으로 설정 */
+    box-shadow: none; /* 그림자 제거 */
+    color: #2e2b37 !important; /* 텍스트 색상을 #2e2b37로 설정 */
+}
+
+/* primary 버튼에 대한 색상 변형 설정 */
+input[type="submit"].primary.color1,
+input[type="reset"].primary.color1,
+input[type="button"].primary.color1,
+button.primary.color1,
+.button.primary.color1 {
+    color: #916f54 !important; /* 텍스트 색상을 #916f54로 설정 */
+}
+
+input[type="submit"].primary.color2,
+input[type="reset"].primary.color2,
+input[type="button"].primary.color2,
+button.primary.color2,
+.button.primary.color2 {
+    color: #b38d70 !important; /* 텍스트 색상을 #b38d70으로 설정 */
+}
+
+input[type="submit"].primary.color3,
+input[type="reset"].primary.color3,
+input[type="button"].primary.color3,
+button.primary.color3,
+.button.primary.color3 {
+    color: #ffe4b4 !important; /* 텍스트 색상을 #ffe4b4로 설정 */
+}
+
+input[type="submit"].primary.color4,
+input[type="reset"].primary.color4,
+input[type="button"].primary.color4,
+button.primary.color4,
+.button.primary.color4 {
+    color: #ecc1a0 !important; /* 텍스트 색상을 #ecc1a0로 설정 */
+}
+
+/* primary 버튼에 마우스를 올렸을 때 스타일 */
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+    background-color: #ffe4b4; /* 배경색을 #ffe4b4로 변경 */
+}
+
+/* primary 버튼 클릭 시 스타일 */
+input[type="submit"].primary:active,
+input[type="reset"].primary:active,
+input[type="button"].primary:active,
+button.primary:active,
+.button.primary:active {
+    background-color: #fdd997; /* 배경색을 더 어둡게 변경 */
+}
+
+/* 비활성화된 버튼 스타일 */
+input[type="submit"].disabled,
+input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+button.disabled,
+button:disabled,
+.button.disabled,
+.button:disabled {
+    pointer-events: none; /* 클릭 불가능하게 설정 */
+    cursor: default; /* 기본 커서 설정 */
+    opacity: 0.5; /* 투명도 설정 */
+}
+
+
+/* MADE BY HYEJIN - 갤러리 관련 스타일 설정 */
+@-moz-keyframes gallery-modal-spinner { /* 모질라 파이어폭스용 스피너 애니메이션 */
+    0% {
+        -moz-transform: rotate(0deg); /* 0도 회전 (시작 상태) */
+        -webkit-transform: rotate(0deg); /* 웹킷 기반 브라우저용 0도 회전 */
+        -ms-transform: rotate(0deg); /* IE용 0도 회전 */
+        transform: rotate(0deg); /* 표준 속성 0도 회전 */
+    }
+    100% {
+        -moz-transform: rotate(360deg); /* 360도 회전 (완료 상태) */
+        -webkit-transform: rotate(360deg); /* 웹킷 기반 브라우저용 360도 회전 */
+        -ms-transform: rotate(360deg); /* IE용 360도 회전 */
+        transform: rotate(360deg); /* 표준 속성 360도 회전 */
+    }
+}
+
+@-webkit-keyframes gallery-modal-spinner { /* 웹킷 기반 브라우저용 스피너 애니메이션 */
+    0% {
+        -moz-transform: rotate(0deg); /* 동일한 초기 상태 설정 */
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% {
+        -moz-transform: rotate(360deg); 
+        -webkit-transform: rotate(360deg); 
+        -ms-transform: rotate(360deg); 
+        transform: rotate(360deg); 
+    }
+}
+
+@-ms-keyframes gallery-modal-spinner { /* IE용 스피너 애니메이션 */
+    0% {
+        -moz-transform: rotate(0deg); 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% {
+        -moz-transform: rotate(360deg); 
+        -webkit-transform: rotate(360deg); 
+        -ms-transform: rotate(360deg); 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes gallery-modal-spinner { /* 표준 키프레임 애니메이션 */
+    0% {
+        -moz-transform: rotate(0deg); 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% {
+        -moz-transform: rotate(360deg); 
+        -webkit-transform: rotate(360deg); 
+        -ms-transform: rotate(360deg); 
+        transform: rotate(360deg); 
+    }
+}
+
+.gallery { /* 갤러리 요소의 기본 스타일 */
+    -moz-align-items: -moz-stretch; /* 파이어폭스용 아이템을 전체 높이에 맞게 설정 */
+    -webkit-align-items: -webkit-stretch; /* 웹킷 브라우저용 동일한 설정 */
+    -ms-align-items: -ms-stretch; /* IE용 동일한 설정 */
+    align-items: stretch; /* 모든 브라우저에서 아이템을 전체 높이에 맞춤 */
+    display: -moz-flex; /* 파이어폭스용 flexbox 사용 */
+    display: -webkit-flex; /* 웹킷 브라우저용 flexbox 사용 */
+    display: -ms-flex; /* IE용 flexbox 사용 */
+    display: flex; /* 모든 브라우저에서 flexbox를 사용 */
+    height: 100%; /* 갤러리 높이를 100%로 설정 */
+}
+
+.gallery > * { /* 갤러리 내의 모든 자식 요소 */
+    width: 20rem; /* 가로 크기를 20rem로 설정 */
+    height: 100%; /* 세로 크기를 100%로 설정 */
+    /* rem 단위는 루트 폰트 크기를 기준으로 한 상대적인 크기입니다. 기본적으로 1rem은 16px입니다. */
+}
+
+.gallery .image { /* 갤러리 이미지 스타일 */
+    display: block; /* 이미지를 블록 요소로 처리 */
+    position: relative; /* 이미지를 상대적으로 배치 */
+    border-bottom: 0; /* 이미지 하단에 테두리 없음 */
+    overflow: hidden; /* 이미지가 요소 밖으로 넘어가지 않게 설정 */
+}
+
+.gallery .image img { /* 이미지 태그에 대한 스타일 */
+    -moz-transition: -moz-transform 0.2s ease-in-out; /* 파이어폭스용 변형 트랜지션 */
+    -webkit-transition: -webkit-transform 0.2s ease-in-out; /* 웹킷 브라우저용 트랜지션 */
+    -ms-transition: -ms-transform 0.2s ease-in-out; /* IE용 트랜지션 */
+    transition: transform 0.2s ease-in-out; /* 모든 브라우저에서 적용되는 트랜지션. 이미지를 변형할 때 부드럽게 적용됨 */
+}
+
+.gallery .image:after { /* 이미지 요소가 hover되었을 때 효과를 적용하는 가상 요소 */
+    -moz-transition: opacity 0.2s ease-in-out; /* 파이어폭스용 불투명도 트랜지션 */
+    -webkit-transition: opacity 0.2s ease-in-out; /* 웹킷 브라우저용 트랜지션 */
+    -ms-transition: opacity 0.2s ease-in-out; /* IE용 트랜지션 */
+    transition: opacity 0.2s ease-in-out; /* 모든 브라우저에서 불투명도 트랜지션을 적용 */
+}
+
+.gallery .image:hover img { /* 이미지가 hover될 때 이미지 확대 효과 */
+    -moz-transform: scale(1.025); /* 파이어폭스용 확대 효과 */
+    -webkit-transform: scale(1.025); /* 웹킷 브라우저용 확대 효과 */
+    -ms-transform: scale(1.025); /* IE용 확대 효과 */
+    transform: scale(1.025); /* 모든 브라우저에서 1.025배로 확대 */
+}
+
+.gallery .image:hover:after { /* hover 시 가상 요소의 불투명도를 0으로 설정 (숨김) */
+    opacity: 0;
+}
+
+.gallery .group { /* 갤러리의 그룹 요소. Flexbox로 설정 */
+    display: -moz-flex; /* 파이어폭스용 flexbox 사용 */
+    display: -webkit-flex; /* 웹킷 브라우저용 flexbox 사용 */
+    display: -ms-flex; /* IE용 flexbox 사용 */
+    display: flex; /* 모든 브라우저에서 flexbox를 사용 */
+    -moz-flex-wrap: wrap; /* 파이어폭스용 wrap 설정 */
+    -webkit-flex-wrap: wrap; /* 웹킷 브라우저용 wrap 설정 */
+    -ms-flex-wrap: wrap; /* IE용 wrap 설정 */
+    flex-wrap: wrap; /* 모든 브라우저에서 flexbox의 wrap 기능을 사용 */
+}
+
+.gallery .group > * { /* 갤러리 그룹 내 자식 요소들 */
+    height: 50%; /* 자식 요소들의 높이를 50%로 설정 */
+}
+
+.gallery .modal { /* 모달 창의 스타일 */
+    display: -moz-flex; /* 파이어폭스용 flexbox 사용 */
+    display: -webkit-flex; /* 웹킷 브라우저용 flexbox 사용 */
+    display: -ms-flex; /* IE용 flexbox 사용 */
+    display: flex; /* 모든 브라우저에서 flexbox를 사용 */
+    -moz-align-items: center; /* 파이어폭스용 아이템 중앙 정렬 */
+    -webkit-align-items: center; /* 웹킷 브라우저용 중앙 정렬 */
+    -ms-align-items: center; /* IE용 중앙 정렬 */
+    align-items: center; /* 모든 브라우저에서 아이템을 중앙 정렬 */
+    -moz-justify-content: center; /* 파이어폭스용 중앙 정렬 */
+    -webkit-justify-content: center; /* 웹킷 브라우저용 중앙 정렬 */
+    -ms-justify-content: center; /* IE용 중앙 정렬 */
+    justify-content: center; /* 모든 브라우저에서 콘텐츠를 중앙 정렬 */
+    pointer-events: none; /* 클릭 이벤트를 받지 않도록 설정 */
+    -moz-user-select: none; /* 파이어폭스용 텍스트 선택 방지 */
+    -webkit-user-select: none; /* 웹킷 브라우저용 텍스트 선택 방지 */
+    -ms-user-select: none; /* IE용 텍스트 선택 방지 */
+    user-select: none; /* 모든 브라우저에서 텍스트 선택 방지 */
+    -moz-transition: opacity 0.5s ease, visibility 0.5s, z-index 0.5s; /* 파이어폭스용 트랜지션 */
+    -webkit-transition: opacity 0.5s ease, visibility 0.5s, z-index 0.5s; /* 웹킷 브라우저용 트랜지션 */
+    -ms-transition: opacity 0.5s ease, visibility 0.5s, z-index 0.5s; /* IE용 트랜지션 */
+    transition: opacity 0.5s ease, visibility 0.5s, z-index 0.5s; /* 모든 브라우저에서 트랜지션 설정 */
+    position: fixed; /* 고정된 위치에 모달을 배치 */
+    top: 0; /* 상단에서 0px */
+    left: 0; /* 왼쪽에서 0px */
+    width: 100%; /* 모달 창의 너비를 100%로 설정 */
+    height: 100%; /* 모달 창의 높이를 100%로 설정 */
+    background-color: rgba(46, 43, 55, 0.875); /* 어두운 반투명 배경 */
+    opacity: 0; /* 초기 불투명도 0으로 설정 (보이지 않음) */
+    outline: 0; /* 윤곽선 제거 */
+    visibility: none; /* 시각적으로 보이지 않음 */
+    z-index: 0; /* 초기 z-index를 0으로 설정하여 가장 뒤로 보냄 */
+}
+
+.gallery .modal:before { /* 모달 창이 로드되기 전 회전 애니메이션 */
+    -moz-animation: gallery-modal-spinner 1s infinite linear; /* 파이어폭스용 애니메이션 */
+    -webkit-animation: gallery-modal-spinner 1s infinite linear; /* 웹킷 브라우저용 애니메이션 */
+    -ms-animation: gallery-modal-spinner 1s infinite linear; /* IE용 애니메이션 */
+    animation: gallery-modal-spinner 1s infinite linear; /* 표준 애니메이션 */
+    content: ''; /* 가상 요소에 내용 없음 */
+    display: block; /* 블록 요소로 처리 */
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 상단에서 50% 아래 */
+    left: 50%; /* 왼쪽에서 50% */
+    width: 4rem; /* 너비 4rem */
+    height: 4rem; /* 높이 4rem */
+    margin: -2rem 0 0 -2rem; /* 이미지 중심을 맞추기 위한 마진 */
+    background-image: url("data:image/svg+xml..."); /* 로딩 스피너 이미지 */
+    background-position: center; /* 중앙 정렬 */
+    background-repeat: no-repeat; /* 이미지 반복 없음 */
+    background-size: 4rem; /* 4rem 크기로 설정 */
+    opacity: 0; /* 불투명도를 0으로 설정 */
+}
+
+/* 클래스에 대한 설명 추가: 각 속성은 해당 요소가 어떻게 배치되고 애니메이션되는지를 정의합니다. */
+
+/* 'em'과 'rem' 단위의 차이 설명: 
+  - 'em': 요소의 현재 폰트 크기를 기준으로 상대적인 크기를 설정하는 단위. 
+         부모 요소의 폰트 크기에 따라 달라짐.
+  - 'rem': 최상위 HTML 요소의 폰트 크기를 기준으로 상대적인 크기를 설정하는 단위.
+         브라우저 기본 설정에서는 보통 1rem이 16px에 해당함.
+  - 'px': 고정된 단위로, 1px은 화면의 한 픽셀을 나타냄.
+*/
+
+.gallery .modal .inner { /* 모달 안의 콘텐츠 스타일 */
+    -moz-transform: translateY(0.75rem); /* 파이어폭스용 Y축으로 0.75rem 이동 */
+    -webkit-transform: translateY(0.75rem); /* 웹킷 브라우저용 이동 */
+    -ms-transform: translateY(0.75rem); /* IE용 이동 */
+    transform: translateY(0.75rem); /* 모든 브라우저에서 적용되는 Y축 이동 */
+    -moz-transition: opacity 0.25s ease, -moz-transform 0.25s ease; /* 파이어폭스용 트랜지션 */
+    -webkit-transition: opacity 0.25s ease, -webkit-transform 0.25s ease; /* 웹킷 브라우저용 트랜지션 */
+    -ms-transition: opacity 0.25s ease, -ms-transform 0.25s ease; /* IE용 트랜지션 */
+    transition: opacity 0.25s ease, transform 0.25s ease; /* 모든 브라우저에서 트랜지션 적용 */
+    opacity: 0; /* 초기 불투명도 0으로 설정 (보이지 않음) */
+}
+
+.gallery .modal.loaded .inner { /* 모달이 로드된 후 */
+    -moz-transform: translateY(0); /* 파이어폭스용 Y축 이동을 0으로 */
+    -webkit-transform: translateY(0); /* 웹킷 브라우저용 Y축 이동을 0으로 */
+    -ms-transform: translateY(0); /* IE용 Y축 이동을 0으로 */
+    transform: translateY(0); /* 모든 브라우저에서 Y축 이동을 0으로 설정 */
+    opacity: 1; /* 불투명도를 1로 설정 (보이게 만듦) */
+}
+
+.gallery .modal.loaded:before { /* 로드된 모달에서 애니메이션 지연을 제거 */
+    -moz-transition-delay: 0s; /* 파이어폭스용 지연 제거 */
+    -webkit-transition-delay: 0s; /* 웹킷 브라우저용 지연 제거 */
+    -ms-transition-delay: 0s; /* IE용 지연 제거 */
+    transition-delay: 0s; /* 모든 브라우저에서 지연 제거 */
+    opacity: 0; /* 로딩 스피너 불투명도 0으로 설정 (보이지 않음) */
+}
+
+
+/* 미디어 쿼리를 사용하여 화면 크기에 따라 다른 스타일을 적용 */
+
+/* 화면의 너비가 980px 이하일 때 적용되는 스타일 */
+@media screen and (max-width: 980px) {
+
+    .gallery .modal .inner img {
+        max-width: 100vw; /* 이미지의 최대 너비를 100% 뷰포트 너비로 설정. 즉, 화면에 맞게 이미지 크기를 조정 */
+    }
+
+}
+
+/* 화면의 너비가 736px 이하일 때 적용되는 스타일 */
+@media screen and (max-width: 736px) {
+
+    .gallery {
+        -moz-flex-direction: column; /* 파이어폭스용으로 갤러리의 방향을 세로(column)로 설정 */
+        -webkit-flex-direction: column; /* 웹킷 브라우저용 설정 */
+        -ms-flex-direction: column; /* IE용 설정 */
+        flex-direction: column; /* 모든 브라우저에서 갤러리 요소를 세로로 정렬 */
+        height: auto; /* 갤러리의 높이를 자동으로 설정하여 콘텐츠에 맞게 조정 */
+    }
+
+    .gallery > * {
+        height: auto; /* 갤러리 내 자식 요소들의 높이를 자동으로 설정 */
+        width: 100%; /* 갤러리 내 자식 요소들의 너비를 100%로 설정하여 화면에 꽉 차게 함 */
+    }
+
+    .gallery .image {
+        width: 100%; /* 이미지의 너비를 100%로 설정하여 화면에 맞춤 */
+        height: 40rem; /* 이미지의 높이를 40rem로 고정 설정 */
+        /* rem 단위는 상대적인 크기 단위로, 기본 폰트 크기(1rem = 16px)를 기준으로 계산됩니다 */
+    }
+
+    /* 화면 크기에 따라 다양한 비율로 설정된 너비 (span 클래스) */
+    .gallery .group .span-0-25 {
+        width: 8.33333%; /* 화면의 8.33333% 차지 */
+    }
+
+    .gallery .group .span-0-5 {
+        width: 16.66666%; /* 화면의 16.66666% 차지 */
+    }
+
+    .gallery .group .span-0-75 {
+        width: 25.0%; /* 화면의 25% 차지 */
+    }
+
+    .gallery .group .span-1 {
+        width: 33.33333%; /* 화면의 33.33333% 차지 */
+    }
+
+    .gallery .group .span-1-25 {
+        width: 41.66666%; /* 화면의 41.66666% 차지 */
+    }
+
+    .gallery .group .span-1-5 {
+        width: 49.99999%; /* 화면의 50% 차지 */
+    }
+
+    .gallery .group .span-1-75 {
+        width: 58.33333%; /* 화면의 58.33333% 차지 */
+    }
+
+    .gallery .group .span-2 {
+        width: 66.66666%; /* 화면의 66.66666% 차지 */
+    }
+
+    .gallery .group .span-2-25 {
+        width: 74.99999%; /* 화면의 75% 차지 */
+    }
+
+    .gallery .group .span-2-5 {
+        width: 83.33332%; /* 화면의 83.33332% 차지 */
+    }
+
+    .gallery .group .span-2-75 {
+        width: 91.66666%; /* 화면의 91.66666% 차지 */
+    }
+
+    .gallery .group .span-3 {
+        width: 99.99999%; /* 화면의 100% 차지 */
+    }
+
+    .gallery .group .span-3-25 {
+        width: 108.33332%; /* 화면의 108.33332% 차지 */
+    }
+
+    .gallery .group .span-3-5 {
+        width: 116.66665%; /* 화면의 116.66665% 차지 */
+    }
+
+    .gallery .group .span-3-75 {
+        width: 124.99999%; /* 화면의 124.99999% 차지 */
+    }
+
+    .gallery .group .span-4 {
+        width: 133.33332%; /* 화면의 133.33332% 차지 */
+    }
+
+    .gallery .group .span-4-25 {
+        width: 141.66665%; /* 화면의 141.66665% 차지 */
+    }
+
+    .gallery .group .span-4-5 {
+        width: 149.99998%; /* 화면의 149.99998% 차지 */
+    }
+
+    .gallery .group .span-4-75 {
+        width: 158.33332%; /* 화면의 158.33332% 차지 */
+    }
+
+    .gallery .group .span-5 {
+        width: 166.66665%; /* 화면의 166.66665% 차지 */
+    }
+
+    .gallery .group .span-5-25 {
+        width: 174.99998%; /* 화면의 174.99998% 차지 */
+    }
+
+    .gallery .group .span-5-5 {
+        width: 183.33331%; /* 화면의 183.33331% 차지 */
+    }
+
+    .gallery .group .span-5-75 {
+        width: 191.66665%; /* 화면의 191.66665% 차지 */
+    }
+
+    .gallery .group .span-6 {
+        width: 199.99998%; /* 화면의 199.99998% 차지 */
+    }
+
+    .gallery .group .span-6-25 {
+        width: 208.33331%; /* 화면의 208.33331% 차지 */
+    }
+
+    .gallery .group .span-6-5 {
+        width: 216.66664%; /* 화면의 216.66664% 차지 */
+    }
+
+    .gallery .group .span-6-75 {
+        width: 224.99998%; /* 화면의 224.99998% 차지 */
+    }
+
+    .gallery .group .span-7 {
+        width: 233.33331%; /* 화면의 233.33331% 차지 */
+    }
+
+    .gallery .group .span-7-25 {
+        width: 241.66664%; /* 화면의 241.66664% 차지 */
+    }
+
+    .gallery .group .span-7-5 {
+        width: 249.99997%; /* 화면의 249.99997% 차지 */
+    }
+
+    .gallery .group .span-7-75 {
+        width: 258.33331%; /* 화면의 258.33331% 차지 */
+    }
+
+    .gallery .group .span-8 {
+        width: 266.66664%; /* 화면의 266.66664% 차지 */
+    }
+
+    .gallery .group .span-8-25 {
+        width: 274.99997%; /* 화면의 274.99997% 차지 */
+    }
+
+    .gallery .group .span-8-5 {
+        width: 283.3333%; /* 화면의 283.3333% 차지 */
+    }
+
+    .gallery .group .span-8-75 {
+        width: 291.66664%; /* 화면의 291.66664% 차지 */
+    }
+
+    .gallery .group .span-9 {
+        width: 299.99997%; /* 화면의 299.99997% 차지 */
+    }
+
+    .gallery .group .span-9-25 {
+        width: 308.3333%; /* 화면의 308.3333% 차지 */
+    }
+
+    .gallery .group .span-9-5 {
+        width: 316.66663%; /* 화면의 316.66663% 차지 */
+    }
+
+    .gallery .group .span-9-75 {
+        width: 324.99997%; /* 화면의 324.99997% 차지 */
+    }
+
+    .gallery .group .span-10 {
+        width: 333.3333%; /* 화면의 333.3333% 차지 */
+    }
+
+    .gallery .group .image {
+        height: 20rem; /* 이미지의 높이를 20rem로 고정 설정 */
+    }
+
+}
+
+
+	@media screen and (max-width: 480px) {
+
+		.gallery .image {
+			height: 30rem;
+} 
+
+		.gallery .group .image {
+			height: 12.5rem;
+} 
+
+} 
+
+/* Panel */ /* 기존 CSS 주석을 한글로 번역 */
+
+	.panel {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-grow: 0;
+		-webkit-flex-grow: 0;
+		-ms-flex-grow: 0;
+		flex-grow: 0;
+		-moz-flex-shrink: 0;
+		-webkit-flex-shrink: 0;
+		-ms-flex-shrink: 0;
+		flex-shrink: 0;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-moz-align-items: -moz-stretch;
+		-webkit-align-items: -webkit-stretch;
+		-ms-align-items: -ms-stretch;
+		align-items: stretch;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+} 
+
+		.panel > * {
+			position: relative;
+			min-width: 10rem;
+} 
+
+			.panel > *.color0 {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, #916f54 20%, #c4b4a8 60%, #ffe4b4);
+				background-size: 128px 128px, auto;
+} 
+
+			.panel > *.color1 {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel > *.color2 {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > *.color3 {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #ffe4b4;
+} 
+
+			.panel > *.color4 {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #c4b4a8;
+} 
+
+			.panel > *.color1-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel > *.color2-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > *.color3-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #fedea6;
+} 
+
+			.panel > *.color4-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #c4b4a8;
+} 
+
+		.panel > .intro {
+			padding: 3.5rem 3.5rem 2rem 3.5rem ;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-grow: 0;
+			-webkit-flex-grow: 0;
+			-ms-flex-grow: 0;
+			flex-grow: 0;
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-align-items: -moz-flex-start;
+			-webkit-align-items: -webkit-flex-start;
+			-ms-align-items: -ms-flex-start;
+			align-items: flex-start;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			width: 22rem;
+} 
+
+			.panel > .intro.joined {
+				width: 18.5rem;
+				padding-right: 0;
+} 
+
+				.panel > .intro.joined + .inner {
+					padding-left: 2.625rem;
+} 
+
+		.panel > .inner {
+			padding: 3.5rem 3.5rem 2rem 3.5rem ;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-grow: 1;
+			-webkit-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			-moz-flex-shrink: 1;
+			-webkit-flex-shrink: 1;
+			-ms-flex-shrink: 1;
+			flex-shrink: 1;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-align-items: -moz-flex-start;
+			-webkit-align-items: -webkit-flex-start;
+			-ms-align-items: -ms-flex-start;
+			align-items: flex-start;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			position: relative;
+			width: 100%;
+} 
+
+			.panel > .inner.columns {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				-moz-flex-direction: row;
+				-webkit-flex-direction: row;
+				-ms-flex-direction: row;
+				flex-direction: row;
+} 
+
+				.panel > .inner.columns > * {
+					-moz-flex-grow: 0;
+					-webkit-flex-grow: 0;
+					-ms-flex-grow: 0;
+					flex-grow: 0;
+					-moz-flex-shrink: 0;
+					-webkit-flex-shrink: 0;
+					-ms-flex-shrink: 0;
+					flex-shrink: 0;
+					margin-left: 3.5rem;
+} 
+
+				.panel > .inner.columns > :first-child {
+					margin-left: 0;
+} 
+
+				.panel > .inner.columns.divided > * {
+					margin-left: 7rem;
+} 
+
+					.panel > .inner.columns.divided > *:before {
+						content: '';
+						position: absolute;
+						top: 3.5rem;
+						width: 2px;
+						height: calc(100% - 7rem);
+						margin-left: -3.5rem;
+						background-color: rgba(255, 255, 255, 0.25);
+} 
+
+				.panel > .inner.columns.divided > :first-child {
+					margin-left: 0;
+} 
+
+					.panel > .inner.columns.divided > :first-child:before {
+						display: none;
+} 
+
+				.panel > .inner.columns.aligned {
+					-moz-align-items: -moz-flex-start;
+					-webkit-align-items: -webkit-flex-start;
+					-ms-align-items: -ms-flex-start;
+					align-items: flex-start;
+} 
+
+		.panel .span-0-25 {
+			width: 2.5rem;
+} 
+
+		.panel .span-0-5 {
+			width: 5rem;
+} 
+
+		.panel .span-0-75 {
+			width: 7.5rem;
+} 
+
+		.panel .span-1 {
+			width: 10rem;
+} 
+
+		.panel .span-1-25 {
+			width: 12.5rem;
+} 
+
+		.panel .span-1-5 {
+			width: 15rem;
+} 
+
+		.panel .span-1-75 {
+			width: 17.5rem;
+} 
+
+		.panel .span-2 {
+			width: 20rem;
+} 
+
+		.panel .span-2-25 {
+			width: 22.5rem;
+} 
+
+		.panel .span-2-5 {
+			width: 25rem;
+} 
+
+		.panel .span-2-75 {
+			width: 27.5rem;
+} 
+
+		.panel .span-3 {
+			width: 30rem;
+} 
+
+		.panel .span-3-25 {
+			width: 32.5rem;
+} 
+
+		.panel .span-3-5 {
+			width: 35rem;
+} 
+
+		.panel .span-3-75 {
+			width: 37.5rem;
+} 
+
+		.panel .span-4 {
+			width: 40rem;
+} 
+
+		.panel .span-4-25 {
+			width: 42.5rem;
+} 
+
+		.panel .span-4-5 {
+			width: 45rem;
+} 
+
+		.panel .span-4-75 {
+			width: 47.5rem;
+} 
+
+		.panel .span-5 {
+			width: 50rem;
+} 
+
+		.panel .span-5-25 {
+			width: 52.5rem;
+} 
+
+		.panel .span-5-5 {
+			width: 55rem;
+} 
+
+		.panel .span-5-75 {
+			width: 57.5rem;
+} 
+
+		.panel .span-6 {
+			width: 60rem;
+} 
+
+		.panel .span-6-25 {
+			width: 62.5rem;
+} 
+
+		.panel .span-6-5 {
+			width: 65rem;
+} 
+
+		.panel .span-6-75 {
+			width: 67.5rem;
+} 
+
+		.panel .span-7 {
+			width: 70rem;
+} 
+
+		.panel .span-7-25 {
+			width: 72.5rem;
+} 
+
+		.panel .span-7-5 {
+			width: 75rem;
+} 
+
+		.panel .span-7-75 {
+			width: 77.5rem;
+} 
+
+		.panel .span-8 {
+			width: 80rem;
+} 
+
+		.panel .span-8-25 {
+			width: 82.5rem;
+} 
+
+		.panel .span-8-5 {
+			width: 85rem;
+} 
+
+		.panel .span-8-75 {
+			width: 87.5rem;
+} 
+
+		.panel .span-9 {
+			width: 90rem;
+} 
+
+		.panel .span-9-25 {
+			width: 92.5rem;
+} 
+
+		.panel .span-9-5 {
+			width: 95rem;
+} 
+
+		.panel .span-9-75 {
+			width: 97.5rem;
+} 
+
+		.panel .span-10 {
+			width: 100rem;
+} 
+
+		.panel.small {
+			width: 35rem;
+} 
+
+		.panel.medium {
+			width: 50rem;
+} 
+
+		.panel.large {
+			width: 65rem;
+} 
+
+		.panel.small .span-0-25, .panel.medium .span-0-25, .panel.large .span-0-25 {
+			width: 2.5%;
+} 
+
+		.panel.small .span-0-5, .panel.medium .span-0-5, .panel.large .span-0-5 {
+			width: 5%;
+} 
+
+		.panel.small .span-0-75, .panel.medium .span-0-75, .panel.large .span-0-75 {
+			width: 7.5%;
+} 
+
+		.panel.small .span-1, .panel.medium .span-1, .panel.large .span-1 {
+			width: 10%;
+} 
+
+		.panel.small .span-1-25, .panel.medium .span-1-25, .panel.large .span-1-25 {
+			width: 12.5%;
+} 
+
+		.panel.small .span-1-5, .panel.medium .span-1-5, .panel.large .span-1-5 {
+			width: 15%;
+} 
+
+		.panel.small .span-1-75, .panel.medium .span-1-75, .panel.large .span-1-75 {
+			width: 17.5%;
+} 
+
+		.panel.small .span-2, .panel.medium .span-2, .panel.large .span-2 {
+			width: 20%;
+} 
+
+		.panel.small .span-2-25, .panel.medium .span-2-25, .panel.large .span-2-25 {
+			width: 22.5%;
+} 
+
+		.panel.small .span-2-5, .panel.medium .span-2-5, .panel.large .span-2-5 {
+			width: 25%;
+} 
+
+		.panel.small .span-2-75, .panel.medium .span-2-75, .panel.large .span-2-75 {
+			width: 27.5%;
+} 
+
+		.panel.small .span-3, .panel.medium .span-3, .panel.large .span-3 {
+			width: 30%;
+} 
+
+		.panel.small .span-3-25, .panel.medium .span-3-25, .panel.large .span-3-25 {
+			width: 32.5%;
+} 
+
+		.panel.small .span-3-5, .panel.medium .span-3-5, .panel.large .span-3-5 {
+			width: 35%;
+} 
+
+		.panel.small .span-3-75, .panel.medium .span-3-75, .panel.large .span-3-75 {
+			width: 37.5%;
+} 
+
+		.panel.small .span-4, .panel.medium .span-4, .panel.large .span-4 {
+			width: 40%;
+} 
+
+		.panel.small .span-4-25, .panel.medium .span-4-25, .panel.large .span-4-25 {
+			width: 42.5%;
+} 
+
+		.panel.small .span-4-5, .panel.medium .span-4-5, .panel.large .span-4-5 {
+			width: 45%;
+} 
+
+		.panel.small .span-4-75, .panel.medium .span-4-75, .panel.large .span-4-75 {
+			width: 47.5%;
+} 
+
+		.panel.small .span-5, .panel.medium .span-5, .panel.large .span-5 {
+			width: 50%;
+} 
+
+		.panel.small .span-5-25, .panel.medium .span-5-25, .panel.large .span-5-25 {
+			width: 52.5%;
+} 
+
+		.panel.small .span-5-5, .panel.medium .span-5-5, .panel.large .span-5-5 {
+			width: 55%;
+} 
+
+		.panel.small .span-5-75, .panel.medium .span-5-75, .panel.large .span-5-75 {
+			width: 57.5%;
+} 
+
+		.panel.small .span-6, .panel.medium .span-6, .panel.large .span-6 {
+			width: 60%;
+} 
+
+		.panel.small .span-6-25, .panel.medium .span-6-25, .panel.large .span-6-25 {
+			width: 62.5%;
+} 
+
+		.panel.small .span-6-5, .panel.medium .span-6-5, .panel.large .span-6-5 {
+			width: 65%;
+} 
+
+		.panel.small .span-6-75, .panel.medium .span-6-75, .panel.large .span-6-75 {
+			width: 67.5%;
+} 
+
+		.panel.small .span-7, .panel.medium .span-7, .panel.large .span-7 {
+			width: 70%;
+} 
+
+		.panel.small .span-7-25, .panel.medium .span-7-25, .panel.large .span-7-25 {
+			width: 72.5%;
+} 
+
+		.panel.small .span-7-5, .panel.medium .span-7-5, .panel.large .span-7-5 {
+			width: 75%;
+} 
+
+		.panel.small .span-7-75, .panel.medium .span-7-75, .panel.large .span-7-75 {
+			width: 77.5%;
+} 
+
+		.panel.small .span-8, .panel.medium .span-8, .panel.large .span-8 {
+			width: 80%;
+} 
+
+		.panel.small .span-8-25, .panel.medium .span-8-25, .panel.large .span-8-25 {
+			width: 82.5%;
+} 
+
+		.panel.small .span-8-5, .panel.medium .span-8-5, .panel.large .span-8-5 {
+			width: 85%;
+} 
+
+		.panel.small .span-8-75, .panel.medium .span-8-75, .panel.large .span-8-75 {
+			width: 87.5%;
+} 
+
+		.panel.small .span-9, .panel.medium .span-9, .panel.large .span-9 {
+			width: 90%;
+} 
+
+		.panel.small .span-9-25, .panel.medium .span-9-25, .panel.large .span-9-25 {
+			width: 92.5%;
+} 
+
+		.panel.small .span-9-5, .panel.medium .span-9-5, .panel.large .span-9-5 {
+			width: 95%;
+} 
+
+		.panel.small .span-9-75, .panel.medium .span-9-75, .panel.large .span-9-75 {
+			width: 97.5%;
+} 
+
+		.panel.small .span-10, .panel.medium .span-10, .panel.large .span-10 {
+			width: 100%;
+} 
+
+		.panel.color0 {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, #736356 20%, #916f54 60%, #ffe4b4);
+			background-size: 128px 128px, auto;
+} 
+
+		.panel.color1 {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+			background-size: 128px 128px, auto;
+			background-color: #736356;
+} 
+
+		.panel.color2 {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+			background-size: 128px 128px, auto;
+			background-color: #916f54;
+} 
+
+		.panel.color3 {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+			background-size: 128px 128px, auto;
+			background-color: #ffe4b4;
+} 
+
+		.panel.color4 {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+			background-size: 128px 128px, auto;
+			background-color: #916f54;
+} 
+
+		.panel.color1-alt {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+			background-size: 128px 128px, auto;
+			background-color: #736356;
+} 
+
+		.panel.color2-alt {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+			background-size: 128px 128px, auto;
+			background-color: #916f54;
+} 
+
+		.panel.color3-alt {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+			background-size: 128px 128px, auto;
+			background-color: #fedea6;
+} 
+
+		.panel.color4-alt {
+			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+			background-size: 128px 128px, auto;
+			background-color: #916f54;
+} 
+
+	@media screen and (max-width: 736px) {
+
+		.panel {
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: auto;
+} 
+
+			.panel > *.color1 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel > *.color2 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > *.color3 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #ffe4b4;
+} 
+
+			.panel > *.color4 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > *.color1-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel > *.color2-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > *.color3-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #fedea6;
+} 
+
+			.panel > *.color4-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel > .intro {
+				padding: 2.8875rem 1.75rem 1.3875rem 1.75rem ;
+				width: 100% !important;
+} 
+
+				.panel > .intro.joined {
+					padding-bottom: 0;
+					padding-right: 1.75rem;
+} 
+
+					.panel > .intro.joined + .inner {
+						padding-top: 0;
+						padding-left: 1.75rem;
+} 
+
+			.panel > .inner {
+				padding: 2.8875rem 1.75rem 1.3875rem 1.75rem ;
+} 
+
+				.panel > .inner.columns {
+					-moz-flex-direction: column;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					flex-direction: column;
+} 
+
+					.panel > .inner.columns > * {
+						margin-left: 0;
+						margin-top: 0;
+} 
+
+					.panel > .inner.columns > :first-child {
+						margin-top: 0;
+} 
+
+					.panel > .inner.columns.divided > * {
+						margin-left: 0;
+						margin-top: 3.5rem;
+} 
+
+						.panel > .inner.columns.divided > *:before {
+							content: '';
+							position: absolute;
+							top: auto;
+							left: 1.75rem;
+							width: calc(100% - 3.5rem);
+							height: 2px;
+							margin-left: 0;
+							margin-top: -1.75rem;
+} 
+
+					.panel > .inner.columns.divided > :first-child {
+						margin-top: 0;
+} 
+
+			.panel .span-0-25 {
+				width: 100%;
+} 
+
+			.panel .span-0-5 {
+				width: 100%;
+} 
+
+			.panel .span-0-75 {
+				width: 100%;
+} 
+
+			.panel .span-1 {
+				width: 100%;
+} 
+
+			.panel .span-1-25 {
+				width: 100%;
+} 
+
+			.panel .span-1-5 {
+				width: 100%;
+} 
+
+			.panel .span-1-75 {
+				width: 100%;
+} 
+
+			.panel .span-2 {
+				width: 100%;
+} 
+
+			.panel .span-2-25 {
+				width: 100%;
+} 
+
+			.panel .span-2-5 {
+				width: 100%;
+} 
+
+			.panel .span-2-75 {
+				width: 100%;
+} 
+
+			.panel .span-3 {
+				width: 100%;
+} 
+
+			.panel .span-3-25 {
+				width: 100%;
+} 
+
+			.panel .span-3-5 {
+				width: 100%;
+} 
+
+			.panel .span-3-75 {
+				width: 100%;
+} 
+
+			.panel .span-4 {
+				width: 100%;
+} 
+
+			.panel .span-4-25 {
+				width: 100%;
+} 
+
+			.panel .span-4-5 {
+				width: 100%;
+} 
+
+			.panel .span-4-75 {
+				width: 100%;
+} 
+
+			.panel .span-5 {
+				width: 100%;
+} 
+
+			.panel .span-5-25 {
+				width: 100%;
+} 
+
+			.panel .span-5-5 {
+				width: 100%;
+} 
+
+			.panel .span-5-75 {
+				width: 100%;
+} 
+
+			.panel .span-6 {
+				width: 100%;
+} 
+
+			.panel .span-6-25 {
+				width: 100%;
+} 
+
+			.panel .span-6-5 {
+				width: 100%;
+} 
+
+			.panel .span-6-75 {
+				width: 100%;
+} 
+
+			.panel .span-7 {
+				width: 100%;
+} 
+
+			.panel .span-7-25 {
+				width: 100%;
+} 
+
+			.panel .span-7-5 {
+				width: 100%;
+} 
+
+			.panel .span-7-75 {
+				width: 100%;
+} 
+
+			.panel .span-8 {
+				width: 100%;
+} 
+
+			.panel .span-8-25 {
+				width: 100%;
+} 
+
+			.panel .span-8-5 {
+				width: 100%;
+} 
+
+			.panel .span-8-75 {
+				width: 100%;
+} 
+
+			.panel .span-9 {
+				width: 100%;
+} 
+
+			.panel .span-9-25 {
+				width: 100%;
+} 
+
+			.panel .span-9-5 {
+				width: 100%;
+} 
+
+			.panel .span-9-75 {
+				width: 100%;
+} 
+
+			.panel .span-10 {
+				width: 100%;
+} 
+
+			.panel.small, .panel.medium, .panel.large {
+				width: 100% !important;
+} 
+
+				.panel.small .span-0-25, .panel.medium .span-0-25, .panel.large .span-0-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-0-5, .panel.medium .span-0-5, .panel.large .span-0-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-0-75, .panel.medium .span-0-75, .panel.large .span-0-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-1, .panel.medium .span-1, .panel.large .span-1 {
+					width: 100%;
+} 
+
+				.panel.small .span-1-25, .panel.medium .span-1-25, .panel.large .span-1-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-1-5, .panel.medium .span-1-5, .panel.large .span-1-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-1-75, .panel.medium .span-1-75, .panel.large .span-1-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-2, .panel.medium .span-2, .panel.large .span-2 {
+					width: 100%;
+} 
+
+				.panel.small .span-2-25, .panel.medium .span-2-25, .panel.large .span-2-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-2-5, .panel.medium .span-2-5, .panel.large .span-2-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-2-75, .panel.medium .span-2-75, .panel.large .span-2-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-3, .panel.medium .span-3, .panel.large .span-3 {
+					width: 100%;
+} 
+
+				.panel.small .span-3-25, .panel.medium .span-3-25, .panel.large .span-3-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-3-5, .panel.medium .span-3-5, .panel.large .span-3-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-3-75, .panel.medium .span-3-75, .panel.large .span-3-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-4, .panel.medium .span-4, .panel.large .span-4 {
+					width: 100%;
+} 
+
+				.panel.small .span-4-25, .panel.medium .span-4-25, .panel.large .span-4-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-4-5, .panel.medium .span-4-5, .panel.large .span-4-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-4-75, .panel.medium .span-4-75, .panel.large .span-4-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-5, .panel.medium .span-5, .panel.large .span-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-5-25, .panel.medium .span-5-25, .panel.large .span-5-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-5-5, .panel.medium .span-5-5, .panel.large .span-5-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-5-75, .panel.medium .span-5-75, .panel.large .span-5-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-6, .panel.medium .span-6, .panel.large .span-6 {
+					width: 100%;
+} 
+
+				.panel.small .span-6-25, .panel.medium .span-6-25, .panel.large .span-6-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-6-5, .panel.medium .span-6-5, .panel.large .span-6-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-6-75, .panel.medium .span-6-75, .panel.large .span-6-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-7, .panel.medium .span-7, .panel.large .span-7 {
+					width: 100%;
+} 
+
+				.panel.small .span-7-25, .panel.medium .span-7-25, .panel.large .span-7-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-7-5, .panel.medium .span-7-5, .panel.large .span-7-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-7-75, .panel.medium .span-7-75, .panel.large .span-7-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-8, .panel.medium .span-8, .panel.large .span-8 {
+					width: 100%;
+} 
+
+				.panel.small .span-8-25, .panel.medium .span-8-25, .panel.large .span-8-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-8-5, .panel.medium .span-8-5, .panel.large .span-8-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-8-75, .panel.medium .span-8-75, .panel.large .span-8-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-9, .panel.medium .span-9, .panel.large .span-9 {
+					width: 100%;
+} 
+
+				.panel.small .span-9-25, .panel.medium .span-9-25, .panel.large .span-9-25 {
+					width: 100%;
+} 
+
+				.panel.small .span-9-5, .panel.medium .span-9-5, .panel.large .span-9-5 {
+					width: 100%;
+} 
+
+				.panel.small .span-9-75, .panel.medium .span-9-75, .panel.large .span-9-75 {
+					width: 100%;
+} 
+
+				.panel.small .span-10, .panel.medium .span-10, .panel.large .span-10 {
+					width: 100%;
+} 
+
+			.panel.color1 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel.color2 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel.color3 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #ffe4b4;
+} 
+
+			.panel.color4 {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel.color1-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #736356;
+} 
+
+			.panel.color2-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+			.panel.color3-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #fedea6;
+} 
+
+			.panel.color4-alt {
+				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
+				background-size: 128px 128px, auto;
+				background-color: #916f54;
+} 
+
+} 
+
+/* Panel (Banner) */ /* 기존 CSS 주석을 한글로 번역 */
+
+	.panel.banner {
+		-moz-align-items: -moz-stretch;
+		-webkit-align-items: -webkit-stretch;
+		-ms-align-items: -ms-stretch;
+		align-items: stretch;
+} 
+
+		.panel.banner .content {
+			padding: 3.5rem 3.5rem 2rem 3.5rem ;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-flex-grow: 0;
+			-webkit-flex-grow: 0;
+			-ms-flex-grow: 0;
+			flex-grow: 0;
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+} 
+
+			.panel.banner .content > .actions:last-child {
+				margin-bottom: 0;
+} 
+
+		.panel.banner .image {
+			-moz-flex-grow: 0;
+			-webkit-flex-grow: 0;
+			-ms-flex-grow: 0;
+			flex-grow: 0;
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			position: relative;
+} 
+
+			.panel.banner .image img {
+				-moz-object-fit: cover;
+				-webkit-object-fit: cover;
+				-ms-object-fit: cover;
+				object-fit: cover;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+} 
+
+		.panel.banner.left {
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+} 
+
+		.panel.banner.right {
+			-moz-flex-direction: row-reverse;
+			-webkit-flex-direction: row-reverse;
+			-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+} 
+
+	@media screen and (max-width: 736px) {
+
+		.panel.banner .content {
+			padding: 2.8875rem 1.75rem 1.3875rem 1.75rem ;
+			-moz-flex-basis: 60%;
+			-webkit-flex-basis: 60%;
+			-ms-flex-basis: 60%;
+			flex-basis: 60%;
+} 
+
+			.panel.banner .content > .actions:last-child {
+				margin-bottom: 1.5rem;
+} 
+
+		.panel.banner .image {
+			-moz-flex-basis: 40%;
+			-webkit-flex-basis: 40%;
+			-ms-flex-basis: 40%;
+			flex-basis: 40%;
+} 
+
+} 
+
+	@media screen and (max-width: 736px) and (orientation: portrait) {
+
+		.panel.banner .content {
+			-moz-flex-basis: auto;
+			-webkit-flex-basis: auto;
+			-ms-flex-basis: auto;
+			flex-basis: auto;
+} 
+
+		.panel.banner .image {
+			-moz-flex-basis: auto;
+			-webkit-flex-basis: auto;
+			-ms-flex-basis: auto;
+			flex-basis: auto;
+			height: 18rem;
+} 
+
+		.panel.banner.left {
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+} 
+
+		.panel.banner.right {
+			-moz-flex-direction: column-reverse;
+			-webkit-flex-direction: column-reverse;
+			-ms-flex-direction: column-reverse;
+			flex-direction: column-reverse;
+} 
+
+} 
+
+/* Panel (Spotlight) */ /* 기존 CSS 주석을 한글로 번역 */
+
+	.panel.spotlight {
+		-moz-align-items: -moz-stretch;
+		-webkit-align-items: -webkit-stretch;
+		-ms-align-items: -ms-stretch;
+		align-items: stretch;
+		position: relative;
+} 
+
+		.panel.spotlight > * {
+			z-index: 1;
+} 
+
+		.panel.spotlight .content {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			padding: 3.5rem 3.5rem 2rem 3.5rem ;
+} 
+
+		.panel.spotlight .image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+} 
+
+			.panel.spotlight .image img {
+				-moz-object-fit: cover;
+				-webkit-object-fit: cover;
+				-ms-object-fit: cover;
+				object-fit: cover;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+} 
+
+		.panel.spotlight.left {
+			-moz-justify-content: -moz-flex-start;
+			-webkit-justify-content: -webkit-flex-start;
+			-ms-justify-content: -ms-flex-start;
+			justify-content: flex-start;
+} 
+
+			.panel.spotlight.left .content {
+				background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.175) 50%);
+} 
+
+		.panel.spotlight.right {
+			-moz-justify-content: -moz-flex-end;
+			-webkit-justify-content: -webkit-flex-end;
+			-ms-justify-content: -ms-flex-end;
+			justify-content: flex-end;
+} 
+
+			.panel.spotlight.right .content {
+				background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.175) 50%);
+} 
+
+	@media screen and (max-width: 736px) {
+
+		.panel.spotlight .content {
+			padding: 2.8875rem 1.75rem 1.3875rem 1.75rem ;
+			-moz-flex-direction: column !important;
+			-webkit-flex-direction: column !important;
+			-ms-flex-direction: column !important;
+			flex-direction: column !important;
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0.175)) !important;
+			min-height: 25rem;
+} 
+
+} 
+
+	@media screen and (max-width: 480px) {
+
+		.panel.spotlight .content {
+			min-height: 30rem;
+} 
+
+} 
+
+/* Page Wrapper */ /* 기존 CSS 주석을 한글로 번역 */
+
+	#page-wrapper {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		-moz-justify-content: -moz-flex-start;
+		-webkit-justify-content: -webkit-flex-start;
+		-ms-justify-content: -ms-flex-start;
+		justify-content: flex-start;
+		-moz-flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow: 1;
+		-moz-flex-shrink: 1;
+		-webkit-flex-shrink: 1;
+		-ms-flex-shrink: 1;
+		flex-shrink: 1;
+		height: 100%;
+		padding: 5rem;
+} 
+
+		@media screen and (orientation: portrait) {
+
+			#page-wrapper {
+				padding-left: 2rem;
+				padding-right: 2rem;
+} 
+
+} 
+
+		@media screen and (min-aspect-ratio: 16 / 7) {
+
+			#page-wrapper {
+				padding: 6vh;
+} 
+
+} 
+
+		@media screen and (min-aspect-ratio: 16 / 6) {
+
+			#page-wrapper {
+				padding: 0;
+} 
+
+} 
+
+	@media screen and (max-width: 736px) {
+
+		#page-wrapper {
+			height: auto;
+			padding: 1rem;
+} 
+
+} 
+
+	@media screen and (max-width: 480px) {
+
+		#page-wrapper {
+			padding: 0;
+} 
+
+} 
+
+/* Wrapper */ /* 기존 CSS 주석을 한글로 번역 */
+
+	#wrapper {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: row;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-moz-transition: opacity 1s ease-out, -moz-transform 0.75s ease-out;
+		-webkit-transition: opacity 1s ease-out, -webkit-transform 0.75s ease-out;
+		-ms-transition: opacity 1s ease-out, -ms-transform 0.75s ease-out;
+		transition: opacity 1s ease-out, transform 0.75s ease-out;
+		-moz-transition-delay: 0.25s;
+		-webkit-transition-delay: 0.25s;
+		-ms-transition-delay: 0.25s;
+		transition-delay: 0.25s;
+		cursor: default;
+		position: relative;
+		height: 32rem;
+		box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
+} 
+
+		#wrapper > .scrollZone {
+			position: fixed;
+			width: 6rem;
+			height: inherit;
+			cursor: -moz-grab;
+			cursor: -webkit-grab;
+			cursor: -ms-grab;
+			cursor: grab;
+			z-index: 10100;
+} 
+
+			#wrapper > .scrollZone.left {
+				left: 0;
+} 
+
+			#wrapper > .scrollZone.right {
+				right: 0;
+} 
+
+		#wrapper > .copyright {
+			position: absolute;
+			bottom: -3rem;
+			right: 0;
+			font-size: 0.8rem;
+			color: rgba(46, 43, 55, 0.375);
+			margin-bottom: 0;
+} 
+
+			#wrapper > .copyright a:hover {
+				color: inherit;
+} 
+
+		#wrapper.is-dragging {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: -moz-grab;
+			cursor: -webkit-grab;
+			cursor: -ms-grab;
+			cursor: grab;
+} 
+
+			#wrapper.is-dragging * {
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+} 
+
+			#wrapper.is-dragging * {
+				cursor: -moz-grab;
+				cursor: -webkit-grab;
+				cursor: -ms-grab;
+				cursor: grab;
+} 
+
+		#wrapper.is-dragged * {
+			pointer-events: none;
+} 
+
+		body.is-preload #wrapper {
+			-moz-transform: translateX(2rem);
+			-webkit-transform: translateX(2rem);
+			-ms-transform: translateX(2rem);
+			transform: translateX(2rem);
+			opacity: 0;
+} 
+
+	@media screen and (max-width: 736px) {
+
+		#wrapper {
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: auto;
+			margin: 0 0 5rem 0;
+			box-shadow: 0 0.25rem 1.5rem 0.25rem rgba(46, 43, 55, 0.5);
+} 
+
+			#wrapper > .scrollZone {
+				display: none;
+} 
+
+			#wrapper > .copyright {
+				display: block;
+				width: 100%;
+				text-align: center;
+} 
+
+			body.is-preload #wrapper {
+				-moz-transform: translateY(1rem);
+				-webkit-transform: translateY(1rem);
+				-ms-transform: translateY(1rem);
+				transform: translateY(1rem);
+} 
+
+} 
+
+	@media screen and (max-width: 480px) {
+
+		#wrapper {
+			box-shadow: none;
+} 
+
+			body.is-preload #wrapper {
+				-moz-transform: none;
+				-webkit-transform: none;
+				-ms-transform: none;
+				transform: none;
+} 
+
+} 
